@@ -1,0 +1,16 @@
+# TITAN CORE contributor instructions
+
+This is the Rust PS5 payload and bundled web interface derived from Kraken Mount. Read DESIGN.md and CREDITS.md before changes. Preserve GPL/upstream authorship and compatible engine identifiers.
+
+- Work on the requested feature without changing unrelated game/cache/launch logic.
+- Use existing Rust1.99/PS5SDK0.43 toolchain; compiler parallelism at most2jobs.
+- Build with TITAN_UNIFIED_STACK=1 ./ps5/build.sh; inspect actual warnings/errors and both stages.
+- Do not equate build or synthetic browser checks with console gameplay. Record actual validation and limits.
+- Never force unmounts or change a running game's mounts. Native work must pause while a game runs.
+- Preserve files written by games to writable caches during rebuild. Source Delete is separately confirmed.
+- Keep installed-package import rename-only; do not silently reintroduce full-PKG retained backups.
+- No new production dependency without demonstrated need and matching license notices.
+- Web UI is local/bundled, multilingual, RTL-aware, keyboard/controller accessible and PS5-browser compatible.
+- Edit review/monitor-client.js then run review/embed-monitor.py; run review/embed-localization.py and node --check on the extracted script.
+- All game measurements/status claims must come from available console data. Unsupported sensors stay unknown.
+- Never commit console snapshots, personal logs, credentials, build targets or caches.
