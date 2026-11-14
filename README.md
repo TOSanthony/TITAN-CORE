@@ -25,6 +25,24 @@
 [جميع الإصدارات / All releases](https://github.com/devchmod/TITAN-CORE/releases) · [بصمات التحقق / SHA256SUMS](https://github.com/devchmod/TITAN-CORE/releases/download/v0.5.4-beta.1/SHA256SUMS)
 
 
+## ⚙️ قبل التشغيل / Before loading TITAN CORE
+
+**TITAN CORE يتضمن kstuff-lite وShadowMountPlus ويبدأ تشغيلهما تلقائياً. / TITAN CORE bundles kstuff-lite and ShadowMountPlus and starts them automatically.**
+
+### بالعربية
+
+- إذا كنت كتستعمل **kstuff أو ShadowMount كـpayloads مستقلّة**، عطّل تشغيلهما التلقائي أو احذف إدخالاتهما من لائحة **autoload / Payload Manager** الخاصة بهاد الإعداد. شغّل **TITAN CORE فقط** عوض تشغيل الحزم الثلاث كل واحدة بوحدها.
+- المقصود هو إزالة **التشغيل المنفصل** لهذين المكوّنين؛ لا تحذف ملفات الجيلبريك أو elfldr أو ملفات الألعاب، ولا تحذف المكونات المضمّنة داخل TITAN CORE.
+- إذا كانا مشغّلين من قبل، أغلق الألعاب وأعد تشغيل الجهاز لبدء جلسة جديدة، ثم فعّل الجيلبريك وelfldr بالطريقة المعتادة وحمّل ELF ديال TITAN CORE مرة واحدة.
+- TITAN CORE لا يتضمن استغلال الجيلبريك نفسه؛ ما زلت تحتاج إلى الجيلبريك وأداة تحميل ELF. يمكن مراجعة حالة الخدمات في Dashboard وDiagnostics.
+
+### English
+
+- If you previously loaded **standalone kstuff or ShadowMount payloads**, disable their automatic loading or remove their entries from your **autoload / Payload Manager** list for this setup. Load **TITAN CORE only**, instead of loading all three separately.
+- Remove the **separate launch entries**; you do not need to delete jailbreak, elfldr or game files. Keep TITAN CORE's bundled components intact.
+- If standalone services are already running, close games and restart the console for a fresh session. Apply your normal jailbreak, make elfldr available, then load the TITAN CORE ELF once.
+- TITAN CORE does not include a jailbreak exploit. You still need your usual jailbreak and ELF loader. Check service status in Dashboard and Diagnostics.
+
 Developed and maintained by **[devchmod](https://github.com/devchmod)** following six months of independent research, TITAN CORE brings game browsing, USB installation and diagnostics into one PS5 workspace. It integrates the native mounting workflow from Kraken Mount, kstuff-lite 1.11 and ShadowMountPlus 1.7beta10, with TITAN CORE interface, installer and integration work. It targets jailbroken PS5 consoles with elfldr. The development console uses firmware 13.60; wider hardware compatibility has not been established. This project does not include a console exploit.
 
 [Releases](https://github.com/devchmod/TITAN-CORE/releases) · [Source](https://github.com/devchmod/TITAN-CORE) · [Credits](CREDITS.md)
