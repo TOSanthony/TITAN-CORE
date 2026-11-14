@@ -6,11 +6,23 @@ Developed and maintained by **[devchmod](https://github.com/devchmod)** followin
 
 [Releases](https://github.com/devchmod/TITAN-CORE/releases) · [Source](https://github.com/devchmod/TITAN-CORE) · [Credits](CREDITS.md)
 
+## Play supported PKGs installed through Debug Settings or Overdrive
+
+**Already installed a supported PS5 debug FPKG? TITAN CORE can bring it into the playable homebrew library automatically.**
+
+With **Move supported installed PKGs to homebrew automatically** enabled, TITAN CORE discovers eligible packages under `/user/app`, moves the package into its managed homebrew folder, builds the native cache and registers it for launch. You do not need to move each `app.pkg` into `/data/homebrew` yourself.
+
+- **Debug Settings and Overdrive installs:** the maintainer reports successful launches through this workflow on the development console running firmware 13.60.
+- **One full internal PKG:** import uses a filesystem rename rather than keeping a second complete package. Native cache still uses additional space. If a safe move is unavailable, import reports the problem and leaves the source package in place.
+- **Automatic preparation:** close running games and allow scanning/cache preparation to finish with the native services ready.
+
+This TITAN CORE addition addresses the installed-PKG launch problem encountered with the original Kraken Mount build used in the maintainer's testing. That comparison describes the tested builds, not every upstream version. Support is for eligible PS5 debug FPKGs; it is not a guarantee for all packages, firmware versions, retail/encrypted content, or update/DLC combinations.
+
 ## Features
 
 - Dashboard and game library for supported debug FPKGs, folders and image sources, including exFAT.
 - USB/extended-drive browser, internal FPKG copy with progress, byte-for-byte verification and cancellation.
-- Rename-only import of supported installed packages from `/user/app` into the homebrew workflow.
+- **Automatic playback preparation for supported Debug Settings/Overdrive installs:** rename-only import from `/user/app` into the homebrew workflow.
 - Reported system/payload CPU and memory, storage, live logs, kernel-log viewer and current alerts.
 - Browser-local CPU history, read-only reported health checks, JSON/CSV exports and print/Save PDF reports.
 - 31 console-language/regional choices, flag cues, Arabic RTL, themes and controller-friendly navigation.

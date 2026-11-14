@@ -4,7 +4,9 @@
 
 TITAN CORE is maintained by **[devchmod](https://github.com/devchmod)**, following six months of independent research. Project work includes the TITAN CORE interface and branding, multilingual navigation, USB FPKG installer, rename-only installed-package import, diagnostics and reporting, and integration of the resident services.
 
-Development also addresses package discovery, installed-package launch handling and duplicate library filters. Build checks and documented tests are included in this repository; see [validation](docs/VALIDATION.md) for their scope.
+**Installed-PKG launch handling is a TITAN CORE addition:** eligible PS5 debug FPKGs installed through Debug Settings or Overdrive can be discovered under `/user/app`, moved automatically into the managed homebrew workflow without retaining a second full PKG, and prepared for native launch. The maintainer reports successful console use on firmware 13.60; native cache still takes additional space. This addresses the installed-package issue encountered with the original build used during development.
+
+Development also addresses package discovery and duplicate library filters. Build checks and documented tests are included in this repository; see [validation](docs/VALIDATION.md) for their scope.
 
 ## Thanks to the upstream developers
 
