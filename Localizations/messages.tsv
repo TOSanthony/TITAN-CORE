@@ -1,0 +1,363 @@
+Your games. One workspace.|Vos jeux. Un seul espace.|ألعابك في مكان واحد.|您的游戏，尽在一处。|Deine Spiele. Ein zentraler Ort.
+Dashboard|Tableau de bord|لوحة التحكم|概览|Übersicht
+Library|Bibliothèque|المكتبة|游戏库|Bibliothek
+Storage|Stockage|التخزين|存储|Speicher
+Diagnostics|Diagnostic|التشخيص|诊断|Diagnose
+Research|Rapports|التقارير|测试报告|Testberichte
+Settings|Paramètres|الإعدادات|设置|Einstellungen
+Controller Navigation|Navigation à la manette|التنقل بيد التحكم|手柄导航|Controller-Navigation
+Themes|Thèmes|المظهر|主题|Designs
+Overview and statistics|Vue d’ensemble et statistiques|معلومات عامة وإحصائيات|概况与统计|Überblick und Statistiken
+Games and cover art|Jeux et jaquettes|مكتبة الألعاب والصور|游戏与封面|Spiele und Titelbilder
+Manage storage|Gérer le stockage|إدارة المساحات|管理存储空间|Speicher verwalten
+Error logs and diagnostics|Journaux d’erreurs et diagnostic|سجلات الأخطاء والتشخيص|错误日志与诊断|Fehlerprotokolle und Diagnose
+Test reports|Rapports de test|تقارير الاختبارات|测试报告|Testberichte
+Interface and payload settings|Paramètres de l’interface et du payload|إعدادات الواجهة والحمولة|界面与载荷设置|Oberflächen- und Payload-Einstellungen
+Navigate with your controller|Naviguer avec votre manette|التنقل باستخدام يد التحكم|使用手柄导航|Mit dem Controller navigieren
+Customize appearance|Personnaliser l’apparence|تخصيص المظهر|自定义外观|Aussehen anpassen
+Interface language|Langue de l’interface|لغة الواجهة|界面语言|Sprache der Oberfläche
+Change the interface language using the menu in the header. The choice is saved in this browser.|Changez la langue dans le menu en haut de la page. Votre choix est enregistré dans ce navigateur.|غيّر لغة الواجهة من القائمة أعلى الصفحة. يُحفظ اختيارك في هذا المتصفح.|请通过页面顶部的菜单切换界面语言。所选语言将保存在此浏览器中。|Ändere die Sprache über das Menü oben. Die Auswahl wird in diesem Browser gespeichert.
+Stop TITAN CORE|Arrêter TITAN CORE|إيقاف TITAN CORE|停止 TITAN CORE|TITAN CORE beenden
+Offline: payload not running. Retrying.|Hors ligne : le payload ne fonctionne pas. Nouvelle tentative.|غير متصل: الحمولة لا تعمل. جارٍ إعادة المحاولة.|离线：载荷未运行。正在重试。|Offline: Payload läuft nicht. Erneuter Versuch.
+chmod v0.1 is missing. Put libSceAmpr.sprx into /data/titan-core/ampr/. FPKG games cannot run without it.|chmod v0.1 est absent. Placez libSceAmpr.sprx dans /data/titan-core/ampr/. Les jeux FPKG ne peuvent pas fonctionner sans ce fichier.|ملف chmod v0.1 غير موجود. ضع libSceAmpr.sprx في /data/titan-core/ampr/. لا تعمل ألعاب FPKG بدونه.|缺少 chmod v0.1。请将 libSceAmpr.sprx 放入 /data/titan-core/ampr/。没有此文件将无法运行 FPKG 游戏。|chmod v0.1 fehlt. Lege libSceAmpr.sprx in /data/titan-core/ampr/ ab. FPKG-Spiele benötigen diese Datei.
+YOUR CONSOLE, CONNECTED|VOTRE CONSOLE CONNECTÉE|جهازك متصل|连接您的主机|DEINE KONSOLE, VERBUNDEN
+Connecting…|Connexion…|جارٍ الاتصال…|正在连接…|Verbindung wird hergestellt…
+Total games|Total des jeux|مجموع الألعاب|游戏总数|Spiele insgesamt
+Discovered in your library|Détectés dans votre bibliothèque|الألعاب المكتشفة في مكتبتك|在游戏库中发现|In deiner Bibliothek erkannt
+Ready to play|Prêts à jouer|جاهزة للعب|可游玩|Spielbereit
+Registered and available|Enregistrés et disponibles|مسجلة ومتوفرة|已注册且可用|Registriert und verfügbar
+Cache size|Taille du cache|حجم الذاكرة المؤقتة|缓存大小|Cache-Größe
+Internal SSD footprint|Espace occupé sur le SSD interne|المساحة المستعملة على SSD الداخلي|内部 SSD 占用空间|Belegung der internen SSD
+Free storage|Espace libre|المساحة المتاحة|可用空间|Freier Speicher
+Available on the internal SSD|Disponible sur le SSD interne|المتاح على SSD الداخلي|内部 SSD 可用空间|Auf der internen SSD verfügbar
+WELCOME TO TITAN CORE|BIENVENUE DANS TITAN CORE|مرحباً بك في TITAN CORE|欢迎使用 TITAN CORE|WILLKOMMEN BEI TITAN CORE
+A home for your entire library.|Toute votre bibliothèque au même endroit.|مكان واحد لكل مكتبتك.|整个游戏库的归属之地。|Ein Zuhause für deine gesamte Bibliothek.
+Browse your games, keep an eye on storage, and manage your console from one place.|Parcourez vos jeux, surveillez le stockage et gérez votre console depuis un seul espace.|تصفح ألعابك وراقب التخزين وأدر جهازك من مكان واحد.|在一处浏览游戏、查看存储空间并管理主机。|Durchsuche deine Spiele, behalte den Speicher im Blick und verwalte deine Konsole zentral.
+Open library ↗|Ouvrir la bibliothèque ↗|فتح المكتبة ↗|打开游戏库 ↗|Bibliothek öffnen ↗
+View storage|Voir le stockage|عرض التخزين|查看存储|Speicher anzeigen
+Console overview|Vue d’ensemble de la console|نظرة عامة على الجهاز|主机概况|Konsolenübersicht
+Payload|Payload|الحمولة|载荷|Payload
+Waiting for connection|En attente de connexion|في انتظار الاتصال|等待连接|Warte auf Verbindung
+Connected drives|Disques connectés|الأقراص المتصلة|已连接的驱动器|Verbundene Laufwerke
+Games with errors|Jeux en erreur|ألعاب بها أخطاء|存在错误的游戏|Spiele mit Fehlern
+Active sessions|Sessions actives|الجلسات النشطة|活动会话|Aktive Sitzungen
+Workspace shortcuts|Raccourcis|اختصارات|快捷操作|Schnellzugriffe
+Everything you need to keep your library in order.|Tout pour organiser votre bibliothèque.|كل ما تحتاجه لتنظيم مكتبتك.|让游戏库井井有条所需的一切。|Alles, um deine Bibliothek in Ordnung zu halten.
+View diagnostics|Voir le diagnostic|عرض التشخيص|查看诊断|Diagnose anzeigen
+Manage settings|Gérer les paramètres|إدارة الإعدادات|管理设置|Einstellungen verwalten
+Controller guide|Guide de la manette|دليل يد التحكم|手柄指南|Controller-Anleitung
+Connect to your console to see storage usage.|Connectez-vous à votre console pour voir l’utilisation du stockage.|اتصل بجهازك لعرض استعمال مساحة التخزين.|连接主机以查看存储使用情况。|Verbinde deine Konsole, um die Speicherbelegung zu sehen.
+Cache management|Gestion du cache|إدارة الذاكرة المؤقتة|缓存管理|Cache-Verwaltung
+Waiting for live cache information.|En attente des informations du cache.|في انتظار معلومات الذاكرة المؤقتة.|等待实时缓存信息。|Warte auf aktuelle Cache-Informationen.
+Open cache controls|Ouvrir les commandes du cache|فتح أدوات الذاكرة المؤقتة|打开缓存控制|Cache-Einstellungen öffnen
+Payload log|Journal du payload|سجل الحمولة|载荷日志|Payload-Protokoll
+Latest 100 log lines supplied by the console. Updates automatically while connected.|Les 100 dernières lignes du journal de la console. Mise à jour automatique lorsque la connexion est active.|آخر 100 سطر من سجل الجهاز. يُحدّث تلقائياً أثناء الاتصال.|主机提供的最近 100 行日志。连接时自动更新。|Die letzten 100 Protokollzeilen der Konsole. Automatische Aktualisierung bei bestehender Verbindung.
+Games requiring attention|Jeux à vérifier|ألعاب تحتاج إلى المراجعة|需要检查的游戏|Spiele mit Handlungsbedarf
+Waiting for console data.|En attente des données de la console.|في انتظار بيانات الجهاز.|等待主机数据。|Warte auf Konsolendaten.
+TEST REPORTS|RAPPORTS DE TEST|تقارير الاختبارات|测试报告|TESTBERICHTE
+No test reports available|Aucun rapport de test disponible|لا توجد تقارير اختبارات|暂无测试报告|Keine Testberichte vorhanden
+The current payload does not provide a test-report API. Reports will appear here when a report source is connected. Game status and logs are available in Diagnostics.|Le payload actuel ne fournit pas d’API de rapports de test. Les rapports apparaîtront ici lorsqu’une source sera connectée. Consultez Diagnostic pour l’état des jeux et les journaux.|لا توفر الحمولة الحالية واجهة لتقارير الاختبارات. ستظهر التقارير هنا عند ربط مصدر لها. حالات الألعاب والسجلات متاحة في قسم التشخيص.|当前载荷未提供测试报告 API。连接报告来源后，报告将显示在此处。游戏状态和日志可在“诊断”中查看。|Der aktuelle Payload bietet keine API für Testberichte. Berichte erscheinen hier, sobald eine Quelle verbunden ist. Spielstatus und Protokolle findest du unter Diagnose.
+Open diagnostics|Ouvrir le diagnostic|فتح التشخيص|打开诊断|Diagnose öffnen
+Move through the interface|Se déplacer dans l’interface|التنقل في الواجهة|在界面中移动|Durch die Oberfläche navigieren
+Navigate controls and game cards. On PlayStation, use the browser’s native directional navigation.|Parcourez les commandes et les jeux. Sur PlayStation, utilisez la navigation directionnelle du navigateur.|تنقل بين الأزرار وبطاقات الألعاب. على PlayStation، استخدم التنقل الاتجاهي المدمج في المتصفح.|在控件和游戏卡片之间移动。在 PlayStation 上，请使用浏览器自带的方向导航。|Navigiere durch Bedienelemente und Spiele. Auf PlayStation verwendest du die Richtungsnavigation des Browsers.
+Select and return|Sélectionner et revenir|الاختيار والرجوع|选择与返回|Auswählen und zurückkehren
+Enter / ✕|Entrée / ✕|إدخال / ✕|回车 / ✕|Eingabe / ✕
+Activate the focused control.|Activer la commande sélectionnée.|تفعيل الزر المحدد.|激活当前选中的控件。|Das fokussierte Bedienelement aktivieren.
+Esc / Back|Échap / Retour|هروب / رجوع|Esc / 返回|Esc / Zurück
+Close a dialog or return to the library.|Fermer une fenêtre ou revenir à la bibliothèque.|إغلاق النافذة أو العودة إلى المكتبة.|关闭对话框或返回游戏库。|Ein Dialogfenster schließen oder zur Bibliothek zurückkehren.
+Library filters|Filtres de la bibliothèque|مرشحات المكتبة|游戏库筛选|Bibliotheksfilter
+Previous source type.|Type de source précédent.|نوع المصدر السابق.|上一个来源类型。|Vorheriger Quelltyp.
+Next source type. Available while browsing the library.|Type de source suivant. Disponible dans la bibliothèque.|نوع المصدر التالي. متاح أثناء تصفح المكتبة.|下一个来源类型。浏览游戏库时可用。|Nächster Quelltyp. Beim Durchsuchen der Bibliothek verfügbar.
+Keyboard access|Navigation au clavier|التنقل بلوحة المفاتيح|键盘操作|Tastaturbedienung
+Move to the next control.|Passer à la commande suivante.|الانتقال إلى الزر التالي.|移至下一个控件。|Zum nächsten Bedienelement wechseln.
+Move back. Dialogs keep focus inside until closed.|Revenir en arrière. Le focus reste dans la fenêtre jusqu’à sa fermeture.|الرجوع إلى الزر السابق. يبقى التركيز داخل النافذة حتى إغلاقها.|向后移动。对话框关闭前，焦点将保持在对话框内。|Zurück wechseln. Der Fokus bleibt bis zum Schließen im Dialogfenster.
+Make it yours|À votre goût|اجعله على ذوقك|打造专属外观|Nach deinem Geschmack
+Choose an accent for this browser. Your console settings stay the same.|Choisissez une couleur pour ce navigateur. Les paramètres de la console restent identiques.|اختر لوناً لهذا المتصفح. تبقى إعدادات الجهاز كما هي.|为此浏览器选择强调色。主机设置保持不变。|Wähle eine Akzentfarbe für diesen Browser. Die Konsoleneinstellungen bleiben gleich.
+Titan Mint|Menthe Titan|نعناع تيتان|泰坦薄荷绿|Titan-Mint
+Deep Ocean|Océan profond|المحيط العميق|深海蓝|Tiefer Ozean
+Warm Amber|Ambre chaleureux|الكهرمان الدافئ|暖琥珀色|Warmes Bernstein
+Saved locally in this browser.|Enregistré dans ce navigateur.|محفوظ محلياً في هذا المتصفح.|已保存在此浏览器中。|In diesem Browser gespeichert.
+No games found.|Aucun jeu trouvé.|لم يتم العثور على ألعاب.|未找到游戏。|Keine Spiele gefunden.
+Copy .pkg files or game folders to /data/homebrew (or homebrew on a USB drive), then press Rescan.|Copiez les fichiers .pkg ou les dossiers de jeux dans /data/homebrew (ou homebrew sur un disque USB), puis appuyez sur Relancer l’analyse.|انسخ ملفات .pkg أو مجلدات الألعاب إلى /data/homebrew (أو homebrew على قرص USB)، ثم اضغط على إعادة الفحص.|将 .pkg 文件或游戏文件夹复制到 /data/homebrew（或 USB 驱动器上的 homebrew），然后点击“重新扫描”。|Kopiere .pkg-Dateien oder Spieleordner nach /data/homebrew (oder homebrew auf einem USB-Laufwerk) und wähle dann Erneut scannen.
+Each game shows up here and on the home screen once it is registered.|Chaque jeu apparaît ici et sur l’écran d’accueil après son enregistrement.|تظهر كل لعبة هنا وعلى الشاشة الرئيسية بعد تسجيلها.|每个游戏注册后都会显示在此处及主屏幕上。|Jedes Spiel erscheint nach der Registrierung hier und auf dem Startbildschirm.
+Show log|Afficher le journal|عرض السجل|显示日志|Protokoll anzeigen
+chmod v0.1 (libSceAmpr.sprx) is not in /data/titan-core/ampr/.|chmod v0.1 (libSceAmpr.sprx) est absent de /data/titan-core/ampr/.|ملف chmod v0.1 (libSceAmpr.sprx) غير موجود في /data/titan-core/ampr/.|/data/titan-core/ampr/ 中没有 chmod v0.1（libSceAmpr.sprx）。|chmod v0.1 (libSceAmpr.sprx) fehlt in /data/titan-core/ampr/.
+Rescan|Relancer l’analyse|إعادة الفحص|重新扫描|Erneut scannen
+Rebuild all|Tout reconstruire|إعادة بناء الكل|全部重建|Alle neu aufbauen
+Scan paths|Chemins d’analyse|مسارات الفحص|扫描路径|Suchpfade
+One per line. Empty = default roots (/data/homebrew, /data/etaHEN/games, each drive's homebrew, etaHEN/games and root).|Un chemin par ligne. Vide = chemins par défaut (/data/homebrew, /data/etaHEN/games, puis homebrew, etaHEN/games et la racine de chaque disque).|مسار واحد في كل سطر. عند تركه فارغاً تُستخدم المسارات الافتراضية (/data/homebrew و /data/etaHEN/games ومجلدا homebrew و etaHEN/games وجذر كل قرص).|每行一个路径。留空则使用默认路径（/data/homebrew、/data/etaHEN/games，以及每个驱动器中的 homebrew、etaHEN/games 和根目录）。|Ein Pfad pro Zeile. Leer = Standardpfade (/data/homebrew, /data/etaHEN/games sowie homebrew, etaHEN/games und das Stammverzeichnis jedes Laufwerks).
+Inject chmod v0.1 into every game's fakelib|Injecter chmod v0.1 dans le fakelib de chaque jeu|إدراج chmod v0.1 في fakelib لكل لعبة|向每个游戏的 fakelib 注入 chmod v0.1|chmod v0.1 in das fakelib jedes Spiels einbinden
+Game's own fakelib|fakelib du jeu|مجلد fakelib الخاص باللعبة|游戏自身的 fakelib|Spieleigenes fakelib
+emulators (AppContent, GameUpdate, NpEntitlementAccess, PlayGo, Ampr)|émulateurs (AppContent, GameUpdate, NpEntitlementAccess, PlayGo, Ampr)|المحاكيات (AppContent و GameUpdate و NpEntitlementAccess و PlayGo و Ampr)|模拟器（AppContent、GameUpdate、NpEntitlementAccess、PlayGo、Ampr）|Emulatoren (AppContent, GameUpdate, NpEntitlementAccess, PlayGo, Ampr)
+full|complet|كامل|完整|vollständig
+off|désactivé|معطل|关闭|aus
+Apply backports|Appliquer les backports|تطبيق التوافق مع الإصدارات الأقدم|应用向下兼容补丁|Backports anwenden
+Scan interval, seconds (1-3600)|Intervalle d’analyse, secondes (1-3600)|فترة الفحص بالثواني (1-3600)|扫描间隔，秒（1-3600）|Suchintervall, Sekunden (1-3600)
+Low space warning, GB|Alerte d’espace faible, Go|حد تحذير نقص المساحة، GB|低空间警告，GB|Warnung bei wenig Speicher, GB
+System notifications|Notifications système|إشعارات النظام|系统通知|Systembenachrichtigungen
+Debug (klog capture, file route)|Débogage (capture klog, accès aux fichiers)|التنقيح (التقاط klog ومسار الملفات)|调试（捕获 klog、文件路由）|Debug (klog-Aufzeichnung, Dateiroute)
+Purge cache|Purger le cache|مسح الذاكرة المؤقتة|清除缓存|Cache leeren
+Save|Enregistrer|حفظ|保存|Speichern
+Delete|Supprimer|حذف|删除|Löschen
+Rebuild cache|Reconstruire le cache|إعادة بناء الذاكرة المؤقتة|重建缓存|Cache neu aufbauen
+Cancel|Annuler|إلغاء|取消|Abbrechen
+All|Tous|الكل|全部|Alle
+Folders|Dossiers|المجلدات|文件夹|Ordner
+Folder|Dossier|مجلد|文件夹|Ordner
+Pending|En attente|في الانتظار|待处理|Ausstehend
+Checking|Vérification|جارٍ التحقق|检查中|Wird geprüft
+Building|Construction|جارٍ البناء|构建中|Wird aufgebaut
+Ready|Prêt|جاهز|就绪|Bereit
+Error|Erreur|خطأ|错误|Fehler
+Duplicate|Doublon|نسخة مكررة|重复|Duplikat
+Running|En cours|قيد التشغيل|运行中|Läuft
+not built|non construit|لم تُبنَ بعد|尚未构建|noch nicht aufgebaut
+Game running ({games}), scan paused; requests run after it exits.|Jeu en cours ({games}), analyse suspendue ; les demandes seront traitées après sa fermeture.|لعبة قيد التشغيل ({games})، الفحص متوقف مؤقتاً؛ تُنفذ الطلبات بعد إغلاقها.|游戏正在运行（{games}），扫描已暂停；退出游戏后将处理请求。|Spiel läuft ({games}), Suche pausiert; Anfragen werden nach dem Beenden bearbeitet.
+Your request is queued.|Votre demande est en attente.|طلبك في قائمة الانتظار.|您的请求已加入队列。|Deine Anfrage ist vorgemerkt.
+Starting TITAN CORE...|Démarrage de TITAN CORE…|جارٍ تشغيل TITAN CORE…|正在启动 TITAN CORE…|TITAN CORE wird gestartet…
+titan-core.elf is not saved yet: send the ELF to port 9021 once.|titan-core.elf n’est pas encore enregistré : envoyez le fichier ELF une fois au port 9021.|لم يُحفظ titan-core.elf بعد: أرسل ملف ELF مرة واحدة إلى المنفذ 9021.|尚未保存 titan-core.elf：请先将 ELF 文件发送至端口 9021 一次。|titan-core.elf ist noch nicht gespeichert: Sende die ELF-Datei einmal an Port 9021.
+Internal|Interne|داخلي|内部|Intern
+{free} free of {total}|{free} libres sur {total}|{free} متاحة من {total}|总计 {total}，可用 {free}|{free} frei von {total}
+No games of this type.|Aucun jeu de ce type.|لا توجد ألعاب من هذا النوع.|没有此类型的游戏。|Keine Spiele dieses Typs.
+Title ID|Identifiant du jeu|معرّف اللعبة|游戏 ID|Titel-ID
+Version|Version|الإصدار|版本|Version
+Status|État|الحالة|状态|Status
+Type|Type|النوع|类型|Typ
+Drive|Disque|القرص|驱动器|Laufwerk
+Path|Chemin|المسار|路径|Pfad
+Cache path|Chemin du cache|مسار الذاكرة المؤقتة|缓存路径|Cache-Pfad
+Cache built|Cache construit|تاريخ بناء الذاكرة المؤقتة|缓存构建时间|Cache erstellt
+Backport|Backport|توافق مع إصدار أقدم|向下兼容补丁|Backport
+Yes|Oui|نعم|是|Ja
+No|Non|لا|否|Nein
+Sizes unavailable|Tailles indisponibles|الأحجام غير متاحة|大小信息不可用|Größen nicht verfügbar
+Game|Jeu|اللعبة|游戏|Spiel
+DLC|DLC|المحتوى الإضافي|追加内容|DLC
+Cache|Cache|الذاكرة المؤقتة|缓存|Cache
+{part}: unavailable|{part} : indisponible|{part}: غير متاح|{part}：不可用|{part}: nicht verfügbar
+Total {size}|Total {size}|المجموع {size}|总计 {size}|Gesamt {size}
+Duplicate copy: sizes are shown on the library copy.|Doublon : les tailles sont affichées sur l’exemplaire de la bibliothèque.|نسخة مكررة: تظهر الأحجام في نسخة المكتبة.|重复副本：大小信息显示在游戏库中的副本上。|Duplikat: Die Größen werden beim Bibliotheksexemplar angezeigt.
+Loading sizes...|Chargement des tailles…|جارٍ تحميل الأحجام…|正在加载大小信息…|Größen werden geladen…
+Rebuild the cache of {game}?|Reconstruire le cache de {game} ?|هل تريد إعادة بناء الذاكرة المؤقتة للعبة {game}؟|重建 {game} 的缓存？|Cache von {game} neu aufbauen?
+The cache will be built again. The game is unavailable until it finishes.|Le cache sera reconstruit. Le jeu sera indisponible pendant cette opération.|ستُعاد عملية بناء الذاكرة المؤقتة. لن تتاح اللعبة حتى اكتمالها.|将重新构建缓存。完成之前游戏将不可用。|Der Cache wird neu aufgebaut. Das Spiel ist bis zum Abschluss nicht verfügbar.
+Rebuild|Reconstruire|إعادة البناء|重建|Neu aufbauen
+Delete {game}?|Supprimer {game} ?|هل تريد حذف {game}؟|删除 {game}？|{game} löschen?
+.pkg file|fichier .pkg|ملف .pkg|.pkg 文件|.pkg-Datei
+game folder|dossier du jeu|مجلد اللعبة|游戏文件夹|Spieleordner
+The {source} and its cache will be deleted from the drive: {path}. This cannot be undone.|Le {source} et son cache seront supprimés du disque : {path}. Cette action est irréversible.|سيُحذف {source} وذاكرته المؤقتة من القرص: {path}. لا يمكن التراجع عن ذلك.|将从驱动器中删除{source}及其缓存：{path}。此操作无法撤销。|Die Quelle ({source}) und ihr Cache werden vom Laufwerk gelöscht: {path}. Dies kann nicht rückgängig gemacht werden.
+Stop TITAN CORE?|Arrêter TITAN CORE ?|هل تريد إيقاف TITAN CORE؟|停止 TITAN CORE？|TITAN CORE beenden?
+Games stay registered. Open the TITAN CORE tile to start it again.|Les jeux restent enregistrés. Ouvrez l’icône TITAN CORE pour le redémarrer.|تبقى الألعاب مسجلة. افتح أيقونة TITAN CORE لتشغيله مجدداً.|游戏将保持注册状态。打开 TITAN CORE 图标即可重新启动。|Spiele bleiben registriert. Öffne die TITAN CORE-Kachel, um erneut zu starten.
+Stop|Arrêter|إيقاف|停止|Beenden
+A game is running: close it first, then stop TITAN CORE.|Un jeu est en cours : fermez-le avant d’arrêter TITAN CORE.|هناك لعبة قيد التشغيل: أغلقها أولاً، ثم أوقف TITAN CORE.|有游戏正在运行：请先关闭游戏，再停止 TITAN CORE。|Ein Spiel läuft: Schließe es zuerst und beende dann TITAN CORE.
+TITAN CORE stopped. Open the TITAN CORE tile to start it again.|TITAN CORE est arrêté. Ouvrez son icône pour le redémarrer.|تم إيقاف TITAN CORE. افتح أيقونته لتشغيله مجدداً.|TITAN CORE 已停止。打开 TITAN CORE 图标即可重新启动。|TITAN CORE wurde beendet. Öffne die TITAN CORE-Kachel, um erneut zu starten.
+Rebuild all caches?|Reconstruire tous les caches ?|هل تريد إعادة بناء جميع الذواكر المؤقتة؟|重建全部缓存？|Alle Caches neu aufbauen?
+Every game cache is emptied and built again. Games are unavailable while they rebuild.|Le cache de chaque jeu sera vidé et reconstruit. Les jeux seront indisponibles pendant cette opération.|ستُمسح الذاكرة المؤقتة لكل لعبة وتُبنى مجدداً. لن تتاح الألعاب أثناء البناء.|将清空并重建每个游戏的缓存。重建期间游戏将不可用。|Jeder Spiele-Cache wird geleert und neu aufgebaut. Währenddessen sind die Spiele nicht verfügbar.
+Working...|Traitement…|جارٍ العمل…|处理中…|Wird bearbeitet…
+Low space on the internal SSD: {free} free. Cache builds may fail.|Espace faible sur le SSD interne : {free} libres. La construction des caches peut échouer.|مساحة SSD الداخلي منخفضة: {free} متاحة. قد يفشل بناء الذاكرة المؤقتة.|内部 SSD 空间不足：可用 {free}。缓存构建可能失败。|Wenig Speicher auf der internen SSD: {free} frei. Der Cache-Aufbau kann fehlschlagen.
+Disconnected · data may be stale|Déconnecté · données possiblement anciennes|غير متصل · قد تكون البيانات قديمة|已断开连接 · 数据可能已过期|Getrennt · Daten eventuell veraltet
+Offline|Hors ligne|غير متصل|离线|Offline
+Disconnected|Déconnecté|انقطع الاتصال|已断开连接|Getrennt
+Loading...|Chargement…|جارٍ التحميل…|正在加载…|Wird geladen…
+Could not load settings: {error}. Close and reopen to retry; Save is off.|Chargement des paramètres impossible : {error}. Fermez puis rouvrez pour réessayer ; l’enregistrement est désactivé.|تعذر تحميل الإعدادات: {error}. أغلق القسم وافتحه مجدداً للمحاولة؛ الحفظ معطل.|无法加载设置：{error}。关闭后重新打开以重试；保存已禁用。|Einstellungen konnten nicht geladen werden: {error}. Zum Wiederholen schließen und erneut öffnen; Speichern ist deaktiviert.
+Saving...|Enregistrement…|جارٍ الحفظ…|正在保存…|Wird gespeichert…
+Saved.|Enregistré.|تم الحفظ.|已保存。|Gespeichert.
+Save failed: {error}|Échec de l’enregistrement : {error}|فشل الحفظ: {error}|保存失败：{error}|Speichern fehlgeschlagen: {error}
+Purge cache?|Purger le cache ?|هل تريد مسح الذاكرة المؤقتة؟|清除缓存？|Cache leeren?
+Deletes the caches of games no longer in the library and empties and rebuilds all others ({size} now). Games are unavailable while they rebuild.|Supprime les caches des jeux absents de la bibliothèque et vide puis reconstruit tous les autres ({size} actuellement). Les jeux seront indisponibles pendant la reconstruction.|يحذف ذاكرة الألعاب التي لم تعد في المكتبة ويمسح الباقي ويعيد بناءه ({size} حالياً). لن تتاح الألعاب أثناء إعادة البناء.|将删除已不在游戏库中的游戏缓存，并清空和重建其余所有缓存（当前为 {size}）。重建期间游戏将不可用。|Entfernt Caches nicht mehr vorhandener Spiele und leert und erneuert alle anderen (derzeit {size}). Während des Neuaufbaus sind die Spiele nicht verfügbar.
+Purge|Purger|مسح|清除|Leeren
+Hide log|Masquer le journal|إخفاء السجل|隐藏日志|Protokoll ausblenden
+Connected|Connecté|متصل|已连接|Verbunden
+Paused during play|En pause pendant le jeu|متوقف مؤقتاً أثناء اللعب|游戏期间已暂停|Während des Spielens pausiert
+Working|Traitement|قيد العمل|处理中|Wird bearbeitet
+Unknown error|Erreur inconnue|خطأ غير معروف|未知错误|Unbekannter Fehler
+No game errors reported in the current state.|Aucune erreur de jeu signalée actuellement.|لم يُبلّغ عن أخطاء ألعاب في الحالة الحالية.|当前状态下未报告游戏错误。|Im aktuellen Zustand wurden keine Spielfehler gemeldet.
+{free} free of {total} · {percent}% used|{free} libres sur {total} · {percent} % utilisés|{free} متاحة من {total} · المستعمل {percent}%|总计 {total}，可用 {free} · 已使用 {percent}%|{free} frei von {total} · {percent}% belegt
+No drives reported by the console.|Aucun disque signalé par la console.|لم يُبلّغ الجهاز عن أقراص.|主机未报告任何驱动器。|Die Konsole meldet keine Laufwerke.
+Theme saved in this browser.|Thème enregistré dans ce navigateur.|تم حفظ المظهر في هذا المتصفح.|主题已保存在此浏览器中。|Design in diesem Browser gespeichert.
+Theme applied for this session. Local storage is unavailable.|Thème appliqué pour cette session. Le stockage local est indisponible.|تم تطبيق المظهر لهذه الجلسة. التخزين المحلي غير متاح.|主题已应用于本次会话。本地存储不可用。|Design für diese Sitzung angewendet. Lokaler Speicher ist nicht verfügbar.
+Language saved in this browser.|Langue enregistrée dans ce navigateur.|تم حفظ اللغة في هذا المتصفح.|语言已保存在此浏览器中。|Sprache in diesem Browser gespeichert.
+Language applied for this session. Local storage is unavailable.|Langue appliquée pour cette session. Le stockage local est indisponible.|تم تطبيق اللغة لهذه الجلسة. التخزين المحلي غير متاح.|语言已应用于本次会话。本地存储不可用。|Sprache für diese Sitzung angewendet. Lokaler Speicher ist nicht verfügbar.
+Screens|Écrans|الأقسام|页面|Bereiche
+Source type|Type de source|نوع المصدر|来源类型|Quelltyp
+Previous filter (L2)|Filtre précédent (L2)|المرشح السابق (L2)|上一个筛选条件（L2）|Vorheriger Filter (L2)
+Next filter (R2)|Filtre suivant (R2)|المرشح التالي (R2)|下一个筛选条件（R2）|Nächster Filter (R2)
+Close|Fermer|إغلاق|关闭|Schließen
+TITAN CORE on GitHub|TITAN CORE sur GitHub|TITAN CORE على GitHub|GitHub 上的 TITAN CORE|TITAN CORE auf GitHub
+Saved data|Données sauvegardées|بيانات الحفظ|存档数据|Speicherdaten
+Write TITAN CORE log (up to 1 MB)|Écrire le journal TITAN CORE (jusqu’à 1 Mo)|كتابة سجل TITAN CORE (حتى 1 MB)|写入 TITAN CORE 日志（最大 1 MB）|TITAN CORE-Protokoll schreiben (bis 1 MB)
+TITAN CORE cache: {size} · {free} free on the internal SSD.|Cache TITAN CORE : {size} · {free} libres sur le SSD interne.|ذاكرة TITAN CORE المؤقتة: {size} · {free} متاحة على SSD الداخلي.|TITAN CORE 缓存：{size} · 内部 SSD 可用 {free}。|TITAN CORE-Cache: {size} · {free} frei auf der internen SSD.
+TITAN CORE cache · {size}|Cache TITAN CORE · {size}|ذاكرة TITAN CORE المؤقتة · {size}|TITAN CORE 缓存 · {size}|TITAN CORE-Cache · {size}
+Technical details|Détails techniques|التفاصيل التقنية|技术详情|Technische Details
+LIVE METRICS|MESURES EN DIRECT|قياسات مباشرة|实时指标|LIVE-MESSWERTE
+System monitor|Moniteur système|مراقبة النظام|系统监控|Systemmonitor
+CPU activity|Activité CPU|نشاط المعالج|CPU 活动|CPU-Aktivität
+Memory|Mémoire|الذاكرة|内存|Arbeitsspeicher
+Service uptime|Durée de fonctionnement|مدة تشغيل الخدمة|服务运行时间|Dienstlaufzeit
+Since TITAN CORE started|Depuis le démarrage de TITAN CORE|منذ تشغيل TITAN CORE|自 TITAN CORE 启动以来|Seit dem Start von TITAN CORE
+Logical CPUs|Processeurs logiques|المعالجات المنطقية|逻辑处理器|Logische CPUs
+Reported by the console|Indiqué par la console|حسب بيانات الجهاز|由主机报告|Von der Konsole gemeldet
+System metrics appear when the console allows them. Otherwise, payload-only metrics are labeled explicitly.|Les mesures système s’affichent si la console les autorise. Sinon, les mesures limitées au payload sont clairement indiquées.|تظهر قياسات النظام عندما يسمح بها الجهاز. وإلا تُعرض قياسات التطبيق فقط مع توضيح ذلك.|主机允许时显示系统指标。否则，会明确标注仅针对载荷的指标。|Systemwerte werden angezeigt, wenn die Konsole sie freigibt. Andernfalls sind reine Payload-Messwerte klar gekennzeichnet.
+CPU · system|CPU · système|المعالج · النظام|CPU · 系统|CPU · System
+CPU · TITAN CORE|CPU · TITAN CORE|المعالج · TITAN CORE|CPU · TITAN CORE|CPU · TITAN CORE
+Across all logical CPUs|Sur tous les processeurs logiques|عبر جميع المعالجات المنطقية|所有逻辑处理器的总体值|Über alle logischen CPUs
+Payload only · 100% = one core|Payload seul · 100 % = un cœur|التطبيق فقط · 100% تعادل نواة واحدة|仅载荷 · 100% 表示一个核心|Nur Payload · 100% = ein Kern
+Collecting the next sample…|Collecte du prochain échantillon…|جارٍ جمع العينة التالية…|正在采集下一个样本…|Nächste Messung wird erfasst…
+Not exposed by this console|Non fourni par cette console|غير متاح من هذا الجهاز|此主机未提供|Von dieser Konsole nicht bereitgestellt
+RAM · system|RAM · système|الذاكرة · النظام|内存 · 系统|RAM · System
+RAM · payload peak|RAM · pic du payload|الذاكرة · ذروة التطبيق|内存 · 载荷峰值|RAM · Payload-Spitzenwert
+Of {total} · includes caches|Sur {total} · caches inclus|من {total} · تشمل الذاكرة المؤقتة|总计 {total} · 包含缓存|Von {total} · inklusive Caches
+Peak resident memory · payload only|Pic de mémoire résidente · payload seul|ذروة الذاكرة المقيمة · التطبيق فقط|驻留内存峰值 · 仅载荷|Maximaler residenter Speicher · nur Payload
+Updated at {time}|Mis à jour à {time}|آخر تحديث {time}|更新于 {time}|Aktualisiert um {time}
+Images|Images|الصور القرصية|镜像|Abbilder
+Image|Image disque|صورة قرصية|镜像|Abbild
+exFAT|exFAT|exFAT|exFAT|exFAT
+Image file|Fichier image|ملف الصورة القرصية|镜像文件|Abbilddatei
+Other engine required|Autre moteur requis|يتطلب المحرك الآخر|需要另一引擎|Andere Engine erforderlich
+Metadata|Métadonnées|المعلومات الوصفية|元数据|Metadaten
+Filename only; not yet validated|Nom du fichier uniquement ; pas encore validé|اسم الملف فقط؛ لم يُتحقق منه بعد|仅文件名；尚未验证|Nur Dateiname; noch nicht geprüft
+Reported by image engine|Fourni par le moteur d’images|حسب محرك الصور القرصية|由镜像引擎报告|Von der Abbild-Engine gemeldet
+Open image tools|Ouvrir les outils d’images|فتح أدوات الصور القرصية|打开镜像工具|Abbild-Werkzeuge öffnen
+Select image engine|Choisir le moteur d’images|اختيار محرك الصور القرصية|选择镜像引擎|Abbild-Engine auswählen
+Native FPKG engine|Moteur FPKG natif|محرك FPKG الأصلي|原生 FPKG 引擎|Ursprüngliche FPKG-Engine
+ShadowMount image engine|Moteur d’images ShadowMount|محرك صور ShadowMount|ShadowMount 镜像引擎|ShadowMount-Abbild-Engine
+Native FPKG and folders remain handled by TITAN. exFAT files appear independently of image-service health.|TITAN conserve la gestion native des FPKG et dossiers. Les fichiers exFAT s’affichent même si le service d’images est indisponible.|يحتفظ TITAN بمعالجة FPKG والمجلدات بالمحرك الأصلي. تظهر ملفات exFAT حتى عند تعطل خدمة الصور القرصية.|TITAN 保留原生 FPKG 和文件夹处理。exFAT 文件的显示不依赖镜像服务是否正常。|TITAN verwaltet FPKG und Ordner weiterhin nativ. exFAT-Dateien erscheinen unabhängig vom Zustand des Abbilddiensts.
+Mount engine profile|Profil du moteur de montage|وضع محرك التركيب|挂载引擎配置|Mount-Engine-Profil
+One engine owns mounts per boot. Changes apply after a fresh jailbroken boot, not during a running session.|Un seul moteur gère les montages par démarrage. Les changements prennent effet après un nouveau démarrage jailbreaké, pas pendant la session.|محرك واحد مسؤول عن التركيب في كل إقلاع. تُطبق التغييرات بعد إقلاع جديد مع الجلبريك، وليس أثناء الجلسة الحالية.|每次启动仅由一个引擎负责挂载。更改将在下次越狱启动后生效，不会在当前会话中切换。|Pro Start verwaltet eine Engine die Mounts. Änderungen gelten nach einem neuen Start mit Jailbreak, nicht in der laufenden Sitzung.
+Next boot|Prochain démarrage|الإقلاع القادم|下次启动|Nächster Start
+Native FPKG and folders|FPKG et dossiers natifs|FPKG والمجلدات بالمحرك الأصلي|原生 FPKG 和文件夹|Ursprüngliche FPKG und Ordner
+ShadowMount disk images|Images disque ShadowMount|صور الأقراص عبر ShadowMount|ShadowMount 磁盘镜像|ShadowMount-Datenträgerabbilder
+Save next-boot profile|Enregistrer pour le prochain démarrage|حفظ وضع الإقلاع القادم|保存下次启动配置|Profil für nächsten Start speichern
+Image engine tools|Outils du moteur d’images|أدوات محرك الصور القرصية|镜像引擎工具|Werkzeuge der Abbild-Engine
+Saved for the next fresh boot. The active engine has not changed.|Enregistré pour le prochain démarrage. Le moteur actif n’a pas changé.|تم الحفظ للإقلاع الجديد القادم. لم يتغير المحرك النشط.|已保存，供下次启动使用。当前引擎未改变。|Für den nächsten Start gespeichert. Die aktive Engine wurde nicht geändert.
+Image tools require the image profile and a ready ShadowMount service.|Les outils d’images nécessitent le profil d’images et un service ShadowMount prêt.|تحتاج أدوات الصور إلى وضع الصور القرصية وخدمة ShadowMount جاهزة.|镜像工具需要镜像配置以及已就绪的 ShadowMount 服务。|Die Abbild-Werkzeuge benötigen das Abbild-Profil und einen bereiten ShadowMount-Dienst.
+Native caches preserved|Caches natifs conservés|الذاكرة المؤقتة الأصلية محفوظة|原生缓存已保留|Ursprüngliche Caches bleiben erhalten
+Patch|Mise à jour|التحديث|补丁|Patch
+Background kstuff and image services keep running. Open the TITAN CORE tile to restart the interface.|Les services kstuff et d’images continuent en arrière-plan. Ouvrez la vignette TITAN CORE pour relancer l’interface.|تستمر خدمات kstuff والصور في الخلفية. افتح أيقونة TITAN CORE لإعادة تشغيل الواجهة.|后台 kstuff 和镜像服务将继续运行。打开 TITAN CORE 图标以重新启动界面。|Die kstuff- und Abbilddienste laufen im Hintergrund weiter. Öffne die TITAN CORE-Kachel, um die Oberfläche neu zu starten.
+TITAN, kstuff and ShadowMount start together. Native FPKGs and disk images share one library.|TITAN, kstuff et ShadowMount démarrent ensemble. FPKG natifs et images partagent une bibliothèque.|يبدأ TITAN وkstuff وShadowMount معاً. ملفات FPKG الأصلية وصور الأقراص في مكتبة واحدة.|TITAN、kstuff 和 ShadowMount 一同启动。原生 FPKG 和磁盘镜像显示在同一游戏库中。|TITAN, kstuff und ShadowMount starten gemeinsam. Native FPKGs und Datenträgerabbilder teilen sich eine Bibliothek.
+All-in-one startup|Démarrage tout-en-un|تشغيل الكل معاً|一体化启动|Gemeinsamer Start
+TITAN starts kstuff and ShadowMount automatically. No engine profile change is needed.|TITAN démarre automatiquement kstuff et ShadowMount. Aucun changement de profil requis.|يشغل TITAN كلاً من kstuff وShadowMount تلقائياً. لا حاجة لتبديل وضع المحرك.|TITAN 自动启动 kstuff 和 ShadowMount，无需切换引擎配置。|TITAN startet kstuff und ShadowMount automatisch. Kein Profilwechsel nötig.
+TITAN + kstuff + ShadowMount|TITAN + kstuff + ShadowMount|TITAN + kstuff + ShadowMount|TITAN + kstuff + ShadowMount|TITAN + kstuff + ShadowMount
+ShadowMount is not ready yet. Check Dashboard for startup status.|ShadowMount n’est pas encore prêt. Vérifiez son démarrage dans le tableau de bord.|ShadowMount غير جاهز بعد. راجع حالة التشغيل في لوحة التحكم.|ShadowMount 尚未就绪。请在仪表板查看启动状态。|ShadowMount ist noch nicht bereit. Prüfe den Startstatus im Dashboard.
+Waiting for image metadata|En attente des métadonnées de l’image|في انتظار معلومات صورة القرص|正在等待镜像元数据|Warte auf Abbild-Metadaten
+Managed by ShadowMount|Géré par ShadowMount|يديرها ShadowMount|由 ShadowMount 管理|Von ShadowMount verwaltet
+kstuff: {kstuff} · ShadowMount: {shadow}|kstuff : {kstuff} · ShadowMount : {shadow}|kstuff: {kstuff} · ShadowMount: {shadow}|kstuff：{kstuff} · ShadowMount：{shadow}|kstuff: {kstuff} · ShadowMount: {shadow}
+PKG · Installed|PKG · Installé|PKG · مثبّتة|PKG · 已安装|PKG · Installiert
+Installed PKG|PKG installé|لعبة PKG مثبّتة|已安装的 PKG|Installiertes PKG
+Installed size|Taille installée|حجم التثبيت|安装大小|Installierte Größe
+Manage installed game|Gérer le jeu installé|إدارة اللعبة المثبّتة|管理已安装游戏|Installiertes Spiel verwalten
+Preparing compatibility|Préparation de la compatibilité|جارٍ تجهيز التوافق|正在准备兼容模式|Kompatibilität wird vorbereitet
+Move supported installed PKGs to homebrew automatically|Déplacer automatiquement les PKG installés compatibles vers homebrew|نقل ملفات PKG المثبّتة المتوافقة إلى homebrew تلقائياً|自动将兼容的已安装 PKG 移至 homebrew|Kompatible installierte PKGs automatisch nach homebrew verschieben
+Imported packages are stored in /data/homebrew/titan-core. Existing destination files are never replaced.|Les paquets importés sont stockés dans /data/homebrew/titan-core. Les fichiers de destination existants ne sont jamais remplacés.|تُحفظ الملفات المستوردة في /data/homebrew/titan-core. لا يتم استبدال الملفات الموجودة في الوجهة.|导入的包保存在 /data/homebrew/titan-core，不会替换目标位置已有的文件。|Importierte Pakete liegen in /data/homebrew/titan-core. Vorhandene Zieldateien werden nie ersetzt.
+Waiting for homebrew import|En attente d’importation vers homebrew|في انتظار النقل إلى homebrew|等待导入 homebrew|Warte auf homebrew-Import
+Installer|Installation|التثبيت|安装器|Installation
+Install from USB or external storage|Installer depuis USB ou disque externe|التثبيت من USB أو قرص خارجي|从 USB 或外部存储安装|Von USB oder externem Speicher installieren
+FPKG INSTALLER|INSTALLATION FPKG|تثبيت FPKG|FPKG 安装器|FPKG-INSTALLATION
+Bring your games home.|Vos jeux, chez vous.|ألعابك فمكان واحد.|将游戏装入主机。|Deine Spiele auf der Konsole.
+Browse a connected drive and install supported PS5 FPKGs to internal storage.|Parcourez un disque connecté et installez les FPKG PS5 compatibles sur le stockage interne.|تصفح قرصاً متصلاً وثبّت ملفات PS5 FPKG المدعومة في التخزين الداخلي.|浏览已连接的驱动器，将支持的 PS5 FPKG 安装到内部存储。|Durchsuche ein verbundenes Laufwerk und installiere unterstützte PS5-FPKGs intern.
+Your external file is kept. Internal installation needs space for the PKG plus its cache.|Le fichier externe est conservé. Prévoyez la place pour le PKG et son cache.|يبقى الملف الخارجي محفوظاً. التثبيت الداخلي يحتاج مساحة للملف والكاش.|外部文件将保留。内部安装需要 PKG 和缓存空间。|Die externe Datei bleibt erhalten. Intern wird Platz für PKG und Cache benötigt.
+Browse drives|Parcourir les disques|تصفح الأقراص|浏览驱动器|Laufwerke durchsuchen
+Ready to install|Prêt à installer|جاهز للتثبيت|准备安装|Bereit zur Installation
+Cancel installation|Annuler l'installation|إلغاء التثبيت|取消安装|Installation abbrechen
+Installation progress|Progression de l'installation|تقدم التثبيت|安装进度|Installationsfortschritt
+Back to drives|Retour aux disques|العودة للأقراص|返回驱动器|Zurück zu Laufwerken
+No packages or folders found.|Aucun paquet ni dossier trouvé.|لم يتم العثور على ملفات أو مجلدات.|未找到软件包或文件夹。|Keine Pakete oder Ordner gefunden.
+Open folder|Ouvrir le dossier|فتح المجلد|打开文件夹|Ordner öffnen
+Install to internal|Installer en interne|تثبيت في الداخل|安装到内部存储|Intern installieren
+Install this package?|Installer ce paquet ?|تثبيت هذا الملف؟|安装此软件包？|Dieses Paket installieren?
+The external file is kept. Required internal space: {size}, plus cache.|Le fichier externe est conservé. Espace interne requis : {size}, plus le cache.|يبقى الملف الخارجي محفوظاً. المساحة الداخلية المطلوبة: {size}، بالإضافة للكاش.|外部文件将保留。需要内部空间：{size}，另加缓存。|Externe Datei bleibt erhalten. Benötigt intern: {size}, zuzüglich Cache.
+Large folder: showing the first 1025 entries.|Dossier volumineux : les 1025 premières entrées.|مجلد كبير: عرض أول 1025 عنصراً.|文件夹较大：显示前 1025 项。|Großer Ordner: Die ersten 1025 Einträge werden angezeigt.
+Could not browse drive: {error}|Lecture du disque impossible : {error}|تعذر تصفح القرص: {error}|无法浏览驱动器：{error}|Laufwerk nicht lesbar: {error}
+Queued|En attente|في الانتظار|已排队|In Warteschlange
+Installing package|Installation du paquet|جارٍ تثبيت الملف|正在安装软件包|Paket wird installiert
+Verifying package|Vérification du paquet|جارٍ التحقق من الملف|正在验证软件包|Paket wird überprüft
+Installed · preparing library|Installé · préparation de la bibliothèque|تم التثبيت · تجهيز المكتبة|已安装 · 正在准备游戏库|Installiert · Bibliothek wird vorbereitet
+Installation stopped|Installation arrêtée|توقف التثبيت|安装已停止|Installation angehalten
+YOUR WORKSPACE|VOTRE ESPACE|مساحتك|您的空间|DEIN ARBEITSBEREICH
+Console preferences|Préférences de la console|تفضيلات الجهاز|主机偏好设置|Konsoleneinstellungen
+Control your library, appearance and diagnostics from one place.|Gérez bibliothèque, apparence et diagnostics au même endroit.|تحكم في المكتبة والمظهر والتشخيص من مكان واحد.|在一个位置管理游戏库、外观和诊断。|Verwalte Bibliothek, Darstellung und Diagnose an einem Ort.
+Library and storage|Bibliothèque et stockage|المكتبة والتخزين|游戏库与存储|Bibliothek und Speicher
+Notifications and logs|Notifications et journaux|الإشعارات والسجلات|通知与日志|Benachrichtigungen und Protokolle
+Advanced compatibility|Compatibilité avancée|التوافق المتقدم|高级兼容性|Erweiterte Kompatibilität
+Appearance|Apparence|المظهر|外观|Darstellung
+Legacy kernel capture on next start|Capture du noyau au prochain démarrage|التقاط سجل النواة عند التشغيل المقبل|下次启动时捕获旧式内核日志|Kernelaufzeichnung beim nächsten Start
+Live kernel logs are available in Diagnostics without enabling legacy capture.|Les journaux du noyau sont disponibles dans Diagnostics sans activer cette capture.|سجل النواة المباشر متاح في التشخيص دون تفعيل الالتقاط القديم.|无需启用旧式捕获即可在诊断中查看实时内核日志。|Live-Kernelprotokolle sind ohne alte Aufzeichnung in der Diagnose verfügbar.
+KERNEL LOG|JOURNAL DU NOYAU|سجل النواة|内核日志|KERNELPROTOKOLL
+Kernel diagnostics|Diagnostic du noyau|تشخيص النواة|内核诊断|Kerneldiagnose
+Refresh kernel log|Actualiser le journal du noyau|تحديث سجل النواة|刷新内核日志|Kernelprotokoll aktualisieren
+Open Diagnostics to read the latest kernel log.|Ouvrez Diagnostics pour lire le journal du noyau.|افتح التشخيص لقراءة أحدث سجل للنواة.|打开诊断以读取最新内核日志。|Öffne die Diagnose für das aktuelle Kernelprotokoll.
+No kernel messages available.|Aucun message du noyau disponible.|لا توجد رسائل للنواة.|没有可用的内核消息。|Keine Kernelmeldungen verfügbar.
+Showing the latest 64 KB.|Affichage des 64 derniers Ko.|عرض آخر 64 كيلوبايت.|显示最新的 64 KB。|Die letzten 64 KB werden angezeigt.
+Kernel log updated.|Journal du noyau actualisé.|تم تحديث سجل النواة.|内核日志已更新。|Kernelprotokoll aktualisiert.
+Kernel log unavailable: {error}|Journal du noyau indisponible : {error}|سجل النواة غير متاح: {error}|内核日志不可用：{error}|Kernelprotokoll nicht verfügbar: {error}
+Open console interface|Ouvrir l’interface de la console|فتح واجهة الجهاز|打开主机界面|Konsolenoberfläche öffnen
+Notifications|Notifications|الإشعارات|通知|Benachrichtigungen
+About TITAN CORE|À propos de TITAN CORE|حول TITAN CORE|关于 TITAN CORE|Über TITAN CORE
+SYSTEM / MONITOR & DIAGNOSTICS|SYSTÈME / MONITEUR ET DIAGNOSTIC|النظام / المراقبة والتشخيص|系统 / 监控与诊断|SYSTEM / ÜBERWACHUNG UND DIAGNOSE
+System Monitor & Diagnostics Center|Centre de surveillance et de diagnostic|مركز مراقبة النظام والتشخيص|系统监控与诊断中心|Systemüberwachung und Diagnosezentrum
+Live console status, logs and read-only health checks.|État de la console, journaux et contrôles en lecture seule.|حالة الجهاز والسجلات وفحوصات قراءة فقط.|实时主机状态、日志和只读健康检查。|Konsolenstatus, Protokolle und schreibgeschützte Zustandsprüfungen.
+Console|Console|الجهاز|主机|Konsole
+Firmware|Micrologiciel|إصدار النظام|系统固件|Firmware
+Storage (Internal)|Stockage interne|التخزين الداخلي|内部存储|Interner Speicher
+Temperature|Température|الحرارة|温度|Temperatur
+System activity|Activité du système|نشاط النظام|系统活动|Systemaktivität
+Activity time range|Période d’activité|مدة عرض النشاط|活动时间范围|Aktivitätszeitraum
+Recorded CPU activity|Activité CPU enregistrée|نشاط المعالج المسجل|已记录的 CPU 活动|Aufgezeichnete CPU-Aktivität
+Live|Direct|مباشر|实时|Live
+5 min|5 min|5 دقائق|5 分钟|5 Min.
+30 min|30 min|30 دقيقة|30 分钟|30 Min.
+1 h|1 h|ساعة|1 小时|1 Std.
+Collecting live samples…|Collecte des mesures…|جارٍ جمع العينات…|正在收集实时样本…|Live-Messwerte werden gesammelt…
+Unavailable metrics are shown as —.|Les mesures indisponibles sont indiquées par —.|القياسات غير المتاحة تظهر بالرمز —.|不可用的指标显示为 —。|Nicht verfügbare Messwerte erscheinen als —.
+Storage usage|Utilisation du stockage|استعمال التخزين|存储使用情况|Speicherbelegung
+Used|Utilisé|المستعمل|已用|Belegt
+Logs (Live)|Journaux en direct|السجلات المباشرة|实时日志|Live-Protokolle
+View all|Tout afficher|عرض الكل|查看全部|Alle anzeigen
+Errors|Erreurs|الأخطاء|错误|Fehler
+Diagnostics history|Historique des diagnostics|سجل الفحوصات|诊断历史|Diagnoseverlauf
+Run diagnostics|Lancer le diagnostic|تشغيل الفحوصات|运行诊断|Diagnose ausführen
+Checks cover reported services, library and storage.|Contrôles des services, de la bibliothèque et du stockage signalés.|تشمل الفحوصات الخدمات والمكتبة والتخزين حسب بيانات الجهاز.|检查主机报告的服务、游戏库和存储。|Prüft gemeldete Dienste, Bibliothek und Speicher.
+Date & time|Date et heure|التاريخ والوقت|日期与时间|Datum und Uhrzeit
+Result|Résultat|النتيجة|结果|Ergebnis
+Details|Détails|التفاصيل|详情|Details
+History is saved in this browser only.|L’historique est conservé dans ce navigateur uniquement.|يحفظ السجل في هذا المتصفح فقط.|历史记录仅保存在此浏览器中。|Der Verlauf wird nur in diesem Browser gespeichert.
+Reports|Rapports|التقارير|报告|Berichte
+EXPORT|EXPORTER|تصدير|导出|EXPORT
+Export a snapshot of the current console data.|Exportez un instantané des données actuelles de la console.|تصدير لقطة من بيانات الجهاز الحالية.|导出当前主机数据的快照。|Exportiert eine Momentaufnahme der Konsolendaten.
+System report|Rapport système|تقرير النظام|系统报告|Systembericht
+Library report|Rapport de bibliothèque|تقرير المكتبة|游戏库报告|Bibliotheksbericht
+Print / Save PDF|Imprimer / Enregistrer en PDF|طباعة / حفظ PDF|打印 / 保存 PDF|Drucken / Als PDF speichern
+Local console|Console locale|الجهاز المحلي|本地主机|Lokale Konsole
+Console offline|Console hors ligne|الجهاز غير متصل|主机离线|Konsole offline
+Low storage|Espace faible|مساحة منخفضة|存储空间不足|Wenig Speicherplatz
+Service requires attention|Service à vérifier|خدمة تحتاج للمراجعة|服务需要检查|Dienst erfordert Aufmerksamkeit
+No log entries available.|Aucune entrée de journal disponible.|لا توجد سجلات متاحة.|没有可用的日志条目。|Keine Protokolleinträge verfügbar.
+{percent}% used|{percent} % utilisé|{percent}% مستعمل|已用 {percent}%|{percent}% belegt
+Payload CPU · 100% = one core. Samples begin when this page opens.|CPU du payload · 100 % = un cœur. Mesures depuis l’ouverture de cette page.|معالج TITAN · 100% تعادل نواة واحدة. تبدأ العينات عند فتح الصفحة.|载荷 CPU · 100% 表示一个核心。样本从打开此页面时开始。|Payload-CPU · 100% = ein Kern. Messung beginnt beim Öffnen der Seite.
+System CPU. Samples begin when this page opens.|CPU système. Mesures depuis l’ouverture de cette page.|معالج النظام. تبدأ العينات عند فتح الصفحة.|系统 CPU。样本从打开此页面时开始。|System-CPU. Messung beginnt beim Öffnen der Seite.
+No current alerts.|Aucune alerte actuelle.|لا توجد تنبيهات حالية.|目前没有警报。|Keine aktuellen Meldungen.
+Application|Application|التطبيق|应用程序|Anwendung
+Console address|Adresse de la console|عنوان الجهاز|主机地址|Konsolenadresse
+Runtime|Moteur d’exécution|محرك التشغيل|运行时|Laufzeit
+Services|Services|الخدمات|服务|Dienste
+Real console data only. Unavailable sensors stay blank.|Données réelles uniquement. Les capteurs indisponibles restent vides.|بيانات الجهاز الحقيقية فقط. الحساسات غير المتاحة تبقى بلا قيمة.|仅显示真实主机数据。不可用的传感器保持空白。|Nur echte Konsolendaten. Nicht verfügbare Sensoren bleiben leer.
+View source and acknowledgments|Voir les sources et les crédits|عرض المصدر والاعتمادات|查看源代码与致谢|Quellcode und Danksagungen
+Console connection|Connexion à la console|الاتصال بالجهاز|主机连接|Konsolenverbindung
+kstuff service|Service kstuff|خدمة kstuff|kstuff 服务|kstuff-Dienst
+ShadowMount service|Service ShadowMount|خدمة ShadowMount|ShadowMount 服务|ShadowMount-Dienst
+Runtime available|Moteur disponible|المحرك متاح|运行时可用|Laufzeit verfügbar
+Internal storage|Stockage interne|التخزين الداخلي|内部存储|Interner Speicher
+Library errors|Erreurs de bibliothèque|أخطاء المكتبة|游戏库错误|Bibliotheksfehler
+Reported checks passed.|Les contrôles signalés ont réussi.|نجحت الفحوصات حسب البيانات المتاحة.|报告的数据检查已通过。|Gemeldete Prüfungen bestanden.
+Some reported checks need attention.|Certains contrôles nécessitent une vérification.|بعض الفحوصات تحتاج للمراجعة.|部分检查需要注意。|Einige Prüfungen erfordern Aufmerksamkeit.
+Diagnostics unavailable: {error}|Diagnostic indisponible : {error}|الفحوصات غير متاحة: {error}|诊断不可用：{error}|Diagnose nicht verfügbar: {error}
+Browser storage is unavailable; history is temporary.|Stockage du navigateur indisponible ; historique temporaire.|تخزين المتصفح غير متاح؛ السجل مؤقت.|浏览器存储不可用；历史记录为临时保存。|Browserspeicher nicht verfügbar; Verlauf nur vorübergehend.
+Passed|Réussi|ناجح|通过|Bestanden
+Warning|Avertissement|تحذير|警告|Warnung
+Failed|Échec|فشل|失败|Fehlgeschlagen
+reported checks|contrôles signalés|فحوصات حسب البيانات المتاحة|项报告检查|gemeldete Prüfungen
+No diagnostics run in this browser yet.|Aucun diagnostic effectué dans ce navigateur.|لم تشغل فحوصات في هذا المتصفح بعد.|此浏览器尚未运行诊断。|In diesem Browser wurde noch keine Diagnose ausgeführt.
+Connect to the console before exporting.|Connectez-vous à la console avant d’exporter.|اتصل بالجهاز قبل التصدير.|导出前请连接主机。|Vor dem Export mit der Konsole verbinden.
+Report downloaded.|Rapport téléchargé.|تم تحميل التقرير.|报告已下载。|Bericht heruntergeladen.
+Exported the last snapshot; console is offline.|Dernier instantané exporté ; console hors ligne.|تم تصدير آخر لقطة؛ الجهاز غير متصل.|已导出最后快照；主机离线。|Letzte Momentaufnahme exportiert; Konsole offline.
+Allow a new window to print or save a PDF.|Autorisez une nouvelle fenêtre pour imprimer ou enregistrer un PDF.|اسمح بنافذة جديدة للطباعة أو حفظ PDF.|请允许新窗口以打印或保存 PDF。|Neues Fenster zum Drucken oder Speichern als PDF erlauben.
+Use the print dialog to save a PDF.|Utilisez la fenêtre d’impression pour enregistrer un PDF.|استعمل نافذة الطباعة لحفظ PDF.|使用打印对话框保存 PDF。|Im Druckdialog als PDF speichern.
