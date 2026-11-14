@@ -1,0 +1,45 @@
+{
+  "retrieved": "2026-11-14",
+  "components": [
+    {
+      "name": "kstuff-lite",
+      "tag": "v1.11",
+      "repository": "https://github.com/EchoStretch/kstuff-lite",
+      "commit": "85fb88a526e58e357d6f1e626ce05af4acdb8b5d",
+      "file": "kstuff-lite-v1.11.elf",
+      "sha256": "ab9a6cb4d3b1daf139d4d646e402b1cf569071acd64599c936d7a3a6164dc779",
+      "license": "GPL-3.0-or-later (source file headers)"
+    },
+    {
+      "name": "ShadowMountPlus",
+      "tag": "1.7beta10",
+      "repository": "https://github.com/drakmor/ShadowMountPlus",
+      "commit": "a8e400487effa1a63c81943ad16fef2d9ea83cfb",
+      "file": "shadowmountplus-1.7beta10.elf",
+      "sha256": "8c6798232ae2a8fbcd209ab97fc4f8d4d47cf23b7eecfaa6349c0bfeb8e4a3d3",
+      "license": "GPL-3.0 (upstream LICENSE), upstream third-party notices retained"
+    }
+  ],
+  "source_archives": [
+    {
+      "file": "sources/bearssl-79c060e.tar.gz",
+      "sha256": "4becb3d46bc73dddeff548c34166206cc4ace70bfa73cfdd28654108e3ae6143"
+    },
+    {
+      "file": "sources/isa-l-crypto-07d0b25.zip",
+      "sha256": "0a7710a2d844b2f52c307a09b1bb71d55c11d5d740e43d4ea2900c2028289477"
+    },
+    {
+      "file": "sources/kstuff-lite-85fb88a.zip",
+      "sha256": "44c0d91c43ae1acfd30160adf71a8bc38bd7885eeff694662cfd3c7ca25bc665"
+    },
+    {
+      "file": "sources/libtomcrypt-b96e96c.zip",
+      "sha256": "bb9245a39f00a1099fc0fdb990182d007df1481889c5ea47caab6698583abb27"
+    },
+    {
+      "file": "sources/shadowmountplus-a8e4004.zip",
+      "sha256": "4e80930bd5b27d8d22bd43fe3eeb426aab38cf518aab909fca1c5a14cb9a1a5b"
+    }
+  ]
+}
