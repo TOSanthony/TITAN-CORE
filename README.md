@@ -2,7 +2,7 @@
 <h1 align="center">TITAN CORE</h1>
 <p align="center">A PS5 game workspace with a native FPKG engine, external-drive installer and live diagnostics.</p>
 
-TITAN CORE combines a web interface, the native game-mounting workflow derived from Kraken Mount, kstuff-lite1.11 and ShadowMountPlus1.7beta10. It targets jailbroken PS5 consoles with elfldr. The development console uses firmware13.60; wider hardware compatibility has not been established. This project does not include a console exploit.
+TITAN CORE combines a web interface, the native game-mounting workflow derived from Kraken Mount, kstuff-lite 1.11 and ShadowMountPlus 1.7beta10. It targets jailbroken PS5 consoles with elfldr. The development console uses firmware 13.60; wider hardware compatibility has not been established. This project does not include a console exploit.
 
 [Releases](https://github.com/devchmod/TITAN-CORE/releases) · [Source](https://github.com/devchmod/TITAN-CORE) · [Credits](CREDITS.md)
 
@@ -12,8 +12,8 @@ TITAN CORE combines a web interface, the native game-mounting workflow derived f
 - USB/extended-drive browser, internal FPKG copy with progress, byte-for-byte verification and cancellation.
 - Rename-only import of supported installed packages from `/user/app` into the homebrew workflow.
 - Reported system/payload CPU and memory, storage, live logs, kernel-log viewer and current alerts.
-- Browser-local CPU history, read-only reported health checks, JSON/CSV exports and print/SavePDF reports.
--31console-language/regional choices, flag cues, Arabic RTL, themes and controller-friendly navigation.
+- Browser-local CPU history, read-only reported health checks, JSON/CSV exports and print/Save PDF reports.
+- 31 console-language/regional choices, flag cues, Arabic RTL, themes and controller-friendly navigation.
 
 ![TITAN CORE diagnostics](docs/screenshots/monitor.png)
 *Interface preview with synthetic data. Unsupported sensors remain unavailable on the actual console.*
@@ -33,11 +33,11 @@ Do not disconnect a source drive during installation. Ordinary cancellation/erro
 
 Metrics are reported by the console, with payload-only fallbacks labeled explicitly. Temperature/GPU/I/O rate are not exposed by this backend and remain unknown. CPU history starts when the page opens; it is not historical console telemetry. Diagnostic checks inspect reported status only and are not hardware stress tests. Reports/history are handled in the browser.
 
-English, French, Arabic, Simplified Chinese and German have full current catalogs. Additional languages currently translate50core labels and use English fallback for remaining technical text. See [coverage](Localizations/coverage.json).
+English, French, Arabic, Simplified Chinese and German have full current catalogs. Additional languages currently translate 50 core labels and use English fallback for remaining technical text. See [coverage](Localizations/coverage.json).
 
 ## Build
 
-The source uses Rust1.99.0 and PS5 payload SDK0.43 in the Docker build. Keep compiler parallelism at two jobs.
+The source uses Rust 1.99.0 and PS5 payload SDK 0.43 in the Docker build. Keep compiler parallelism at two jobs.
 
 ```sh
 TITAN_UNIFIED_STACK=1 bash ps5/build.sh
@@ -47,6 +47,6 @@ The build verifies bundled runtime/service hashes and builds both ELF stages. In
 
 ## License and credits
 
-GPL-3.0-or-later. TITAN CORE is a derivative/aggregate project, with original authorship and upstream notices retained. The display name `chmod v0.1` applies to a custom AMPR0.4.0 launch-notice build; it does not claim a new upstream runtime or authorship of that engine. Bundled component source snapshots, modified runtime source and notices are included under `vendor/`.
+GPL-3.0-or-later. TITAN CORE is a derivative/aggregate project, with original authorship and upstream notices retained. The display name `chmod v0.1` applies to a custom AMPR 0.4.0 launch-notice build; it does not claim a new upstream runtime or authorship of that engine. Bundled component source snapshots, modified runtime source and notices are included under `vendor/`.
 
 See [CREDITS.md](CREDITS.md), [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES).
