@@ -2,6 +2,29 @@
 <h1 align="center">TITAN CORE</h1>
 <p align="center">A PS5 game workspace with a native FPKG engine, external-drive installer and live diagnostics.</p>
 
+## ⬇️ تحميل TITAN CORE / Download TITAN CORE
+
+### [⬇️ تحميل ملف ELF مباشرة — Download ELF directly](https://github.com/devchmod/TITAN-CORE/releases/download/v0.5.4-beta.1/TITAN-CORE-0.5.4-beta.1.elf)
+
+**النسخة / Version: 0.5.4-beta.1** · **الملف / File: `TITAN-CORE-0.5.4-beta.1.elf`**
+
+**بالعربية**
+
+1. اضغط على رابط **تحميل ملف ELF مباشرة** أعلاه لتحميل ملف التشغيل.
+2. إذا فتحت [صفحة الإصدار](https://github.com/devchmod/TITAN-CORE/releases/tag/v0.5.4-beta.1)، افتح **Assets** واضغط على **`TITAN-CORE-0.5.4-beta.1.elf`**.
+3. الملف المطلوب للتشغيل هو **`.elf`**. ملفات **Source code (zip / tar.gz)** هي للمطورين وليست ملف التشغيل. لا تحتاج إلى فك ضغط ملف ELF.
+4. أرسل ملف ELF إلى PS5 باستعمال أداة تحميل الـpayload/elfldr التي تستخدمها، ثم افتح `http://<PS5-IP>:8097` مع تعويض `<PS5-IP>` بعنوان جهازك.
+
+**English**
+
+1. Click **Download ELF directly** above to download the runnable payload.
+2. If you open the [release page](https://github.com/devchmod/TITAN-CORE/releases/tag/v0.5.4-beta.1), expand **Assets** and select **`TITAN-CORE-0.5.4-beta.1.elf`**.
+3. You need the **`.elf`** file to run TITAN CORE. **Source code (zip / tar.gz)** downloads are for developers. The ELF does not need extraction.
+4. Send the ELF to your PS5 using your existing payload/elfldr loader, then open `http://<PS5-IP>:8097`, replacing `<PS5-IP>` with your console's address.
+
+[جميع الإصدارات / All releases](https://github.com/devchmod/TITAN-CORE/releases) · [بصمات التحقق / SHA256SUMS](https://github.com/devchmod/TITAN-CORE/releases/download/v0.5.4-beta.1/SHA256SUMS)
+
+
 Developed and maintained by **[devchmod](https://github.com/devchmod)** following six months of independent research, TITAN CORE brings game browsing, USB installation and diagnostics into one PS5 workspace. It integrates the native mounting workflow from Kraken Mount, kstuff-lite 1.11 and ShadowMountPlus 1.7beta10, with TITAN CORE interface, installer and integration work. It targets jailbroken PS5 consoles with elfldr. The development console uses firmware 13.60; wider hardware compatibility has not been established. This project does not include a console exploit.
 
 [Releases](https://github.com/devchmod/TITAN-CORE/releases) · [Source](https://github.com/devchmod/TITAN-CORE) · [Credits](CREDITS.md)
