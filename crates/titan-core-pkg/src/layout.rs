@@ -1,7 +1,6 @@
-//! The Kraken layout descriptor (`naps_pkg_layout.dat`), walked in chunks into a compact block
-//! list. Port of `VF/kraken_image.rs:728-1036` (`describe`) and `FP/mount.rs:35-283` (`KBlock`,
-//! `Kraken::new`, `stored`). Blocks may be raw or Kraken-compressed; byte shuffles and sparse
-//! extents are represented as checked zero blocks; byte shuffles are refused.
+//! Package layout descriptor (`naps_pkg_layout.dat`), read into a compact block list.
+//! Supports raw/compressed blocks and checked sparse zero extents.
+//! Ported upstream source references and license attribution are retained in CREDITS.md.
 
 use alloc::format;
 use alloc::vec;
@@ -15,14 +14,14 @@ use crate::{Error, PRead};
 /// A mount block is at most this long, and a record's offsets are relative to this window.
 const UBLOCK: u64 = 0x4_0000;
 const WINDOW: u64 = 0x4_0000;
-/// One Kraken half.
+/// One compressed half.
 const HALF: u64 = 0x2_0000;
-const COMP_KRAKEN: u64 = 2;
+const COMP_BLOCK_FORMAT: u64 = 2;
 /// The largest descriptor accepted (`FP/mount.rs` MAX_OPEN).
 const MAX_DESCRIPTOR: u64 = 384 << 20;
 /// Records (9 B each) and boundary entries (6 B each) read per chunk.
 const CHUNK: usize = 4096;
-const REPACK: &str = "repack with --kraken stored";
+const REPACK: &str = "repack using stored inner blocks; see the upstream tool options";
 
 /// One mount block: `len` logical bytes at `logical`, stored in `stored_len` bytes at
 /// `stored_at` in `pfs_image.dat`, decoded with `desc`.
@@ -45,7 +44,7 @@ impl KBlock {
 }
 
 /// Mount offset -> stored range in `pfs_image.dat`. 32 B per block (~13 MB per 100 GB).
-pub(crate) struct Kraken {
+pub(crate) struct BlockLayout {
     pub blocks: Vec<KBlock>,
     pub mount_size: u64,
 }
@@ -81,7 +80,7 @@ impl<R: PRead> Records<'_, R> {
     }
 }
 
-impl Kraken {
+impl BlockLayout {
     /// The blocks overlapping mount bytes `off..off + len`, in mount order.
     pub fn range(&self, off: u64, len: u64) -> &[KBlock] {
         let end = off + len;
@@ -105,14 +104,14 @@ impl Kraken {
 }
 
 #[cfg(feature = "probe")]
-impl Kraken {
+impl BlockLayout {
     /// Debug: every block as (logical, len, stored_at, stored_len, even_len, mode bits 32..=36).
     pub fn probe_blocks(&self) -> impl Iterator<Item = (u64, u32, u64, u64, u32, u8)> + '_ {
         self.blocks.iter().map(|b| (b.logical, b.len, b.stored_at, u64::from(b.stored_len), b.desc.even_len, b.desc.mode))
     }
 }
 
-impl Kraken {
+impl BlockLayout {
     /// Walk descriptor `naps` (the way `describe` does) for an image of `image_size` stored
     /// bytes. Raw and compressed blocks are kept; byte-shuffled ones are refused.
     pub fn open<R: PRead>(io: &R, naps: &OuterFile, image_size: u64) -> Result<Self, Error> {
@@ -123,9 +122,9 @@ impl Kraken {
         naps.read(io, 0, &mut head)?;
         let (w0, w1) = (le64(&head, 0), le64(&head, 8));
         let comp = (w0 >> 24) & 3;
-        if comp != COMP_KRAKEN {
+        if comp != COMP_BLOCK_FORMAT {
             return Err(unsupported(format!(
-                "the inner image declares compression type {comp} (not Kraken); {REPACK}"
+                "the inner image declares compression type {comp} (expected supported block format); {REPACK}"
             )));
         }
         let files = (w0 & 0xFF_FFFF) as usize + 1;
@@ -273,7 +272,7 @@ fn boundaries<R: PRead>(
 }
 
 // Port of describe/fill in quer3q/ps5-dump-forge commit 8a3c7d3e4bfeac3b4ddf8e9ff020e819ae8ff1cd
-// vendor/ps5upload-fpkg/src/kraken_image.rs (GPL-3.0-or-later). Boundaries were validated first.
+// the upstream sparse-format reader (GPL-3.0-or-later); see CREDITS.md. Boundaries were validated first.
 fn fill_sparse(logical:&mut u64,sparse:&[(u64,u64)],out:&mut Vec<KBlock>){
     while let Ok(i)=sparse.binary_search_by_key(logical,|s|s.0){
         let end=sparse[i].1;
