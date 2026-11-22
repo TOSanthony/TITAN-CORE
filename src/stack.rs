@@ -15,16 +15,9 @@ pub fn native_title_permitted(tid:&str)->bool{ NATIVE_TITLES.get_or_init(Default
 pub fn native_permitted()->bool{NATIVE_ALLOWED.load(Ordering::Acquire)}
 use std::time::Duration;
 
-// Optional payloads are empty unless embedded by ps5/build.sh from vendor/unified/PAYLOADS.conf.
-#[cfg(feature = "payload-kstuff")]
 const KSTUFF: &[u8] = include_bytes!("../vendor/unified/kstuff-lite-v1.11.elf");
-#[cfg(not(feature = "payload-kstuff"))]
-const KSTUFF: &[u8] = &[];
 const SHADOW: &[u8] = include_bytes!("../vendor/unified/shadowmountplus-1.7beta10.elf");
-#[cfg(feature = "payload-etahen")]
 const ETAHEN: &[u8] = include_bytes!("../vendor/unified/etaHEN.elf");
-#[cfg(not(feature = "payload-etahen"))]
-const ETAHEN: &[u8] = &[];
 const KSTUFF_PATH: &str = "/data/titan-core/payloads/kstuff-lite-v1.11.elf";
 const SHADOW_PATH: &str = "/data/titan-core/payloads/shadowmountplus-1.7beta10.elf";
 const ETAHEN_PATH: &str = "/data/titan-core/payloads/etaHEN.elf";
@@ -122,9 +115,9 @@ fn shadow_ready(port: u16) -> bool {
 }
 fn install(path: &str, bytes: &[u8]) -> Result<(), String> {
     if fs::read(path).is_ok_and(|b| b == bytes) { return Ok(()); }
-    if Path::new(path).exists() { return Err(format!("Existing different payload left untouched: {path}")); }
-    // PS5 returned EOPNOTSUPP for hard-link publication. Exclusive creation needs no link syscall.
-    let mut file=OpenOptions::new().write(true).create_new(true).open(path).map_err(|e|format!("Create {path}: {e}"))?;
+    // A different file from an earlier build is replaced in place.
+    // PS5 returned EOPNOTSUPP for hard-link publication, so the file is rewritten directly (no link/rename).
+    let mut file=OpenOptions::new().write(true).create(true).truncate(true).open(path).map_err(|e|format!("Create {path}: {e}"))?;
     file.write_all(bytes).and_then(|_|file.sync_all()).map_err(|e|format!("Write {path}: {e}"))?;
     if fs::read(path).map_err(|e|e.to_string())? != bytes{return Err(format!("Verification failed: {path}"));}
     Ok(())
@@ -246,49 +239,29 @@ impl Stack {
             stack_policy::BootDecision::Inconsistent => return Err("ShadowMount responds but kstuff readiness is unconfirmed; no reload attempted".into()),
             stack_policy::BootDecision::ObservePrevious => self.phase("waiting", "A startup was already attempted this boot; observing without duplicate launches"),
             stack_policy::BootDecision::Start => {
-                let (kstuff_process,shadow_process,eta_process) = dependency_processes()?; launch_eta = !ETAHEN.is_empty() && !eta_process;
+                let (kstuff_process,shadow_process,eta_process) = dependency_processes()?; launch_eta = !eta_process;
                 fs::create_dir_all("/data/titan-core/payloads").map_err(|e| e.to_string())?;
-                install(SHADOW_PATH, SHADOW)?;
-                if !KSTUFF.is_empty() { install(KSTUFF_PATH, KSTUFF)?; }
-                if !ETAHEN.is_empty() { install(ETAHEN_PATH, ETAHEN)?; }
+                install(KSTUFF_PATH, KSTUFF)?; install(SHADOW_PATH, SHADOW)?; install(ETAHEN_PATH, ETAHEN)?;
                 // One atomic attempt per boot, including across TITAN restarts.
                 let mut marker = OpenOptions::new().write(true).create_new(true).open(&attempt).map_err(|e| format!("Startup attempt already owned or unavailable: {e}"))?;
-                marker.write_all(format!("ShadowMountPlus 1.7beta10, kstuff-lite embedded: {}, etaHEN embedded: {}\n",!KSTUFF.is_empty(),!ETAHEN.is_empty()).as_bytes()).map_err(|e| e.to_string())?;
-                // kstuff-lite is not embedded and etaHEN is: etaHEN includes kstuff, so it must start before ShadowMount.
-                let eta_leads = KSTUFF.is_empty() && launch_eta && !kstuff;
-                if eta_leads {
-                    self.phase("starting", "Starting etaHEN (provides kstuff) before ShadowMount");
-                    launch_eta = false;
-                    if let Err(e) = dispatch(ETAHEN_PATH) { log!("unified: etaHEN dispatch uncertain: {e}; not retrying"); }
+                marker.write_all(b"ShadowMountPlus 1.7beta10 + kstuff-lite 1.11 + etaHEN\n").map_err(|e| e.to_string())?;
+                // Order: kstuff -> ShadowMount -> etaHEN.
+                if !kstuff && !kstuff_process {
+                    self.phase("starting", "Starting pinned kstuff-lite 1.11");
+                    if let Err(e) = dispatch(KSTUFF_PATH) { log!("unified: kstuff dispatch uncertain: {e}; not retrying"); }
+                }
+                if !kstuff {
                     let mut ready = false;
                     for _ in 0..240 {
                         if kstuff_ready() { ready = true; break; }
                         std::thread::sleep(Duration::from_millis(250));
                     }
-                    if !ready { return Err("kstuff was not ready 60 s after etaHEN started; ShadowMount was not dispatched".into()); }
+                    if !ready { return Err("kstuff was not ready 60 s after it started; ShadowMount was not dispatched".into()); }
                 }
-                self.phase("starting", if eta_leads { "kstuff ready; starting ShadowMount" } else { "Starting ShadowMount before kstuff" });
-                // ShadowMount creates its no-automount sentinel before waiting for kstuff.
+                self.phase("starting", "kstuff ready; starting ShadowMount");
                 if shadow_process {
                     self.phase("waiting", "Existing ShadowMount process observed; waiting without restart");
                 } else if let Err(e) = dispatch(SHADOW_PATH) { log!("unified: ShadowMount dispatch uncertain: {e}; not retrying"); }
-                if !kstuff && !eta_leads {
-                    // Wait for the upstream sentinel rather than guessing readiness from a delay.
-                    let mut sentinel = false;
-                    for _ in 0..80 {
-                        if Path::new("/data/.kstuff_noautomount").is_file() { sentinel = true; break; }
-                        std::thread::sleep(Duration::from_millis(250));
-                    }
-                    if !sentinel { return Err("ShadowMount startup sentinel not observed; kstuff was not dispatched".into()); }
-                    if !kstuff_ready() && !kstuff_process {
-                        if !KSTUFF.is_empty() {
-                            self.phase("starting", "Starting pinned kstuff-lite 1.11");
-                            if let Err(e) = dispatch(KSTUFF_PATH) { log!("unified: kstuff dispatch uncertain: {e}; not retrying"); }
-                        } else {
-                            self.phase("waiting", "kstuff is not embedded; waiting for an external kstuff");
-                        }
-                    }
-                }
             }
         }
         let deadline = std::time::Instant::now() + Duration::from_secs(90);
@@ -385,9 +358,9 @@ mod tests {
         let body=b"{\"status\":16}";let mut response=format!("HTTP/1.1 200 OK\r\nContent-Length: {}\r\n\r\n",body.len()).into_bytes();response.extend_from_slice(body);
         let (port,worker)=server(response);assert!(engine_json(port,"/api/v1/scan",json!({}),2).is_err());worker.join().unwrap();
     }
-    #[test] fn installs_are_idempotent_and_do_not_overwrite_owner_files() {
+    #[test] fn installs_are_idempotent_and_replace_changed_files() {
         let dir=std::env::temp_dir().join(format!("titan-stack-{}",std::process::id()));fs::create_dir_all(&dir).unwrap();let path=dir.join("service.elf");let path=path.to_str().unwrap();
-        install(path,b"pinned").unwrap(); install(path,b"pinned").unwrap(); assert!(install(path,b"changed").is_err());assert_eq!(fs::read(path).unwrap(),b"pinned");fs::remove_dir_all(dir).unwrap();
+        install(path,b"pinned").unwrap(); install(path,b"pinned").unwrap(); install(path,b"changed-and-longer").unwrap();assert_eq!(fs::read(path).unwrap(),b"changed-and-longer");install(path,b"short").unwrap();assert_eq!(fs::read(path).unwrap(),b"short");fs::remove_dir_all(dir).unwrap();
     }
     #[test] fn image_metadata_preserves_real_source_and_unknown_cache() {
         let g=normalize_game(&json!({"title_id":"PPSA12345","title_name":"Owner <game>","path":"/mnt/usb0/Game.ffpkg","source_type":"image","image_type":"ufs","source_available":true,"installed":true,"mounted":false,"size_bytes":123}));

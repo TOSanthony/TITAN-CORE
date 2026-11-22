@@ -18,13 +18,12 @@
       "file": "shadowmountplus-1.7beta10.elf",
       "sha256": "8c6798232ae2a8fbcd209ab97fc4f8d4d47cf23b7eecfaa6349c0bfeb8e4a3d3",
       "license": "GPL-3.0 (upstream LICENSE), upstream third-party notices retained"
-    }
-    ,
+    },
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "26034dfbb88dd8be344fee1876c387bfcba0386edb079014e18ec25580368f6d",
-      "note": "added by the project owner; tag, repository and commit still to be recorded"
+      "sha256": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126",
+      "note": "etaHEN 2.6B supplied by the project owner (4740712 bytes)"
     }
   ],
   "source_archives": [

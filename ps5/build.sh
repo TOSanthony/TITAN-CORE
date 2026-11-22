@@ -14,29 +14,8 @@ fi
 
 features=()
 if [[ "${TITAN_UNIFIED_STACK:-0}" == 1 ]]; then
-  # vendor/unified/PAYLOADS.conf: "<file>=1" embeds a payload, "<file>=0" leaves it out.
-  declare -A want=([kstuff-lite-v1.11.elf]= [shadowmountplus-1.7beta10.elf]= [etaHEN.elf]=)
-  while IFS= read -r line || [[ -n "$line" ]]; do
-    line="${line%%#*}"; line="${line//[[:space:]]/}"
-    [[ -z "$line" ]] && continue
-    name="${line%%=*}"; value="${line#*=}"
-    [[ "$line" == *=* && -v "want[$name]" ]] || { echo "PAYLOADS.conf: unknown entry '$line'" >&2; exit 1; }
-    [[ "$value" == 0 || "$value" == 1 ]] || { echo "PAYLOADS.conf: '$name' must be 0 or 1" >&2; exit 1; }
-    want[$name]=$value
-  done < vendor/unified/PAYLOADS.conf
-  for name in "${!want[@]}"; do
-    [[ -n "${want[$name]}" ]] || { echo "PAYLOADS.conf: '$name' is not listed" >&2; exit 1; }
-  done
-  [[ "${want[shadowmountplus-1.7beta10.elf]}" == 1 ]] || { echo "PAYLOADS.conf: shadowmountplus-1.7beta10.elf must be 1" >&2; exit 1; }
-  for name in "${!want[@]}"; do
-    if [[ "${want[$name]}" == 1 ]]; then
-      (cd vendor/unified && grep -F -- "  $name" SHA256SUMS | sha256sum -c --strict -)
-    fi
-  done
+  (cd vendor/unified && sha256sum -c --strict SHA256SUMS)
   features=(--features unified-stack)
-  [[ "${want[kstuff-lite-v1.11.elf]}" == 1 ]] && features+=(--features payload-kstuff)
-  [[ "${want[etaHEN.elf]}" == 1 ]] && features+=(--features payload-etahen)
-  echo "Embedded payloads: kstuff=${want[kstuff-lite-v1.11.elf]} shadowmountplus=1 etaHEN=${want[etaHEN.elf]}"
 fi
 out=target/ps5
 cc="$PS5_PAYLOAD_SDK/bin/prospero-clang"
