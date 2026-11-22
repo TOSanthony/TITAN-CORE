@@ -575,7 +575,7 @@ button.primary{box-shadow:0 5px 20px rgba(71,211,174,.12)}
       <button id="update-check" class="update-control" type="button" title="Updates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.2 7a7 7 0 0 1 11.6-1L20 9M4 15l2.2 3A7 7 0 0 0 18 17"/></svg><span id="update-label" aria-live="polite">Updates</span><span id="update-dot" hidden aria-hidden="true"></span></button>
       </div>
       <button id="notifications" class="header-icon" type="button" aria-label="Notifications" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 17h14l-2-3V9a5 5 0 0 0-10 0v5zM10 20h4M12 2v2"/></svg><span id="notification-dot" hidden></span></button><button id="about-titan" class="header-icon" type="button" aria-label="About TITAN CORE" title="About TITAN CORE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></svg></button>
-      <a class="gh-link button" href="https://github.com/devchmod/TITAN-CORE" aria-label="TITAN CORE on GitHub" title="TITAN CORE on GitHub">
+      <a class="gh-link button" href="https://github.com/TOSanthony/TITAN-CORE" aria-label="TITAN CORE on GitHub" title="TITAN CORE on GitHub">
         <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.36-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A8 8 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
       </a>
     </div>
@@ -1747,7 +1747,7 @@ function renderActivityChart(){var cpu=cpuReading(state),now=Date.now(),windowMs
 function openUtility(kind){utilityOpener=document.activeElement;$('utility-dialog').dataset.kind=kind;$('utility-dialog').hidden=false;setText($('utility-title'),kind==='about'?'About TITAN CORE':'Notifications');if(kind==='about')renderAboutBody();else renderAlertBody();syncInert();$('utility-close').focus();}
 function closeUtility(){$('utility-dialog').hidden=true;syncInert();if(utilityOpener&&document.body.contains(utilityOpener))utilityOpener.focus();}
 function renderAlertBody(){var box=$('utility-body');box.textContent='';var alerts=snapshotAlerts(state,monitorOnline);if(!alerts.length)box.appendChild(el('p',null,'No current alerts.'));alerts.slice(0,50).forEach(function(item){var row=el('div','alert-item');row.appendChild(el('strong',null,item.title,true));row.appendChild(el('p',null,item.detail,true));box.appendChild(row);});}
-function renderAboutBody(){var box=$('utility-body');box.textContent='';[['Application','TITAN CORE '+(state&&state.version||'__VERSION__')],['Console address',location.origin],['Firmware',state&&state.services&&state.services.firmware||'—'],['Runtime','chmod v0.1 · AMPR0.4.0'],['Services','kstuff-lite1.11 · ShadowMountPlus1.7beta10']].forEach(function(v){var row=el('div','live-row');row.appendChild(el('span',null,v[0]));row.appendChild(el('strong',null,v[1],true));box.appendChild(row);});box.appendChild(el('p',null,'Real console data only. Unavailable sensors stay blank.'));var a=el('a',null,'View source and acknowledgments');a.href='https://github.com/devchmod/TITAN-CORE/blob/main/CREDITS.md';a.target='_blank';a.rel='noopener';box.appendChild(a);}
+function renderAboutBody(){var box=$('utility-body');box.textContent='';[['Application','TITAN CORE '+(state&&state.version||'__VERSION__')],['Console address',location.origin],['Firmware',state&&state.services&&state.services.firmware||'—'],['Runtime','chmod v0.1 · AMPR0.4.0'],['Services','kstuff-lite1.11 · ShadowMountPlus1.7beta10']].forEach(function(v){var row=el('div','live-row');row.appendChild(el('span',null,v[0]));row.appendChild(el('strong',null,v[1],true));box.appendChild(row);});box.appendChild(el('p',null,'Real console data only. Unavailable sensors stay blank.'));var a=el('a',null,'View source and acknowledgments');a.href='https://github.com/TOSanthony/TITAN-CORE/blob/main/CREDITS.md';a.target='_blank';a.rel='noopener';box.appendChild(a);}
 function healthChecks(v,online){var checks=[{name:'Console connection',result:online?'passed':'failed'}];if(!online)return checks;var services=v.services||{},disk=internalStorage(v);checks.push({name:'kstuff service',result:services.kstuff_ready?'passed':'warning'},{name:'ShadowMount service',result:services.shadowmount_ready?'passed':'warning'},{name:'Runtime available',result:v.cache&&v.cache.ampr_present?'passed':'warning'},{name:'Internal storage',result:disk&&!(v.cache&&v.cache.low_space)?'passed':'warning'},{name:'Library errors',result:(v.games||[]).some(function(g){return g.status==='error';})?'warning':'passed'});return checks;}
 async function runDiagnostics(){var button=$('run-diagnostics');button.disabled=true;setText($('diagnostic-result'),'Loading...');try{var r=await fetch('/api/state',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);var fresh=await r.json();if(!fresh||!Array.isArray(fresh.games)||!Array.isArray(fresh.drives))throw Error('Invalid console snapshot');var checks=healthChecks(fresh,true),result=checks.some(function(c){return c.result==='warning';})?'warning':'passed';saveDiagnostics({time:Date.now(),result:result,checks:checks});setText($('diagnostic-result'),result==='passed'?'Reported checks passed.':'Some reported checks need attention.');}catch(e){saveDiagnostics({time:Date.now(),result:'failed',checks:healthChecks(null,false),error:e.message});setText($('diagnostic-result'),t('Diagnostics unavailable: {error}',{error:e.message}));}finally{button.disabled=false;}}
 function saveDiagnostics(record){diagHistory.push(record);diagHistory=diagHistory.slice(-20);try{localStorage.setItem('titan-diagnostics-history',JSON.stringify(diagHistory));}catch(e){setText($('report-message'),'Browser storage is unavailable; history is temporary.');}renderDiagnosticHistory();}
@@ -1766,7 +1766,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-range]'),function(
 // BEGIN UPDATE POLICY
 (function (root) {
   'use strict';
-  var API = 'https://api.github.com/repos/devchmod/TITAN-CORE/releases?per_page=100';
+  var API = 'https://api.github.com/repos/TOSanthony/TITAN-CORE/releases?per_page=100';
   function version(text) {
     if (typeof text !== 'string' || text.length > 128) return null;
     var m = /^v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$/.exec(text);
@@ -1792,7 +1792,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-range]'),function(
     try {
       var u=new URL(url), parts=u.pathname.split('/').map(decodeURIComponent);
       return u.protocol==='https:' && u.hostname==='github.com' && !u.port && !u.username && !u.password && !u.search && !u.hash &&
-        parts.length===7 && parts[1]==='devchmod' && parts[2]==='TITAN-CORE' && parts[3]==='releases' && parts[4]==='download' && parts[5]===tag && parts[6]===name;
+        parts.length===7 && parts[1]==='TOSanthony' && parts[2]==='TITAN-CORE' && parts[3]==='releases' && parts[4]==='download' && parts[5]===tag && parts[6]===name;
     } catch (e) { return false; }
   }
   function select(releases) {
@@ -1804,7 +1804,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-range]'),function(
       var a=r.assets.find(function (x) { return x && typeof x.name==='string' && /^TITAN-CORE(?:-[0-9A-Za-z.+-]+)?\.elf$/i.test(x.name) && x.state==='uploaded' && Number.isFinite(x.size) && x.size>0 && assetURL(x.browser_download_url,r.tag_name,x.name); });
       if (!a || (best && compare(v,best.version)<=0)) return;
       best={version:v,tag:r.tag_name,url:a.browser_download_url,name:a.name,size:a.size,
-        page:'https://github.com/devchmod/TITAN-CORE/releases/tag/'+encodeURIComponent(r.tag_name),
+        page:'https://github.com/TOSanthony/TITAN-CORE/releases/tag/'+encodeURIComponent(r.tag_name),
         notes:typeof r.body==='string'?r.body.slice(0,4000):'',prerelease:r.prerelease===true||v.pre.length>0};
     });
     return best;

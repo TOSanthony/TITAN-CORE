@@ -13,7 +13,7 @@ class Handler(base.Handler):
   route=urlparse(self.path).path
   if route=='/':
    mode=parse_qs(urlparse(self.path).query).get('scenario',['available'])[0]
-   s=(base.ROOT/'src/ui.html').read_text().replace('__VERSION__','0.5.8-beta.1 SYNTHETIC').replace(' manifest="titan.appcache"','').replace('https://api.github.com/repos/devchmod/TITAN-CORE/releases?per_page=100','/fixture/releases?scenario='+mode)
+   s=(base.ROOT/'src/ui.html').read_text().replace('__VERSION__','0.5.8-beta.1 SYNTHETIC').replace(' manifest="titan.appcache"','').replace('https://api.github.com/repos/TOSanthony/TITAN-CORE/releases?per_page=100','/fixture/releases?scenario='+mode)
    self.send_response(200);self.send_header('Content-Type','text/html');self.end_headers();self.wfile.write(s.encode());return
   if route=='/api/sizes/PPSA22715':
    self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps({'game':6000000000,'cache':120000000,'dlc':0,'save':0}).encode());return
@@ -21,7 +21,7 @@ class Handler(base.Handler):
    mode=parse_qs(urlparse(self.path).query).get('scenario',['available'])[0]
    if mode=='error':self.send_response(503);self.end_headers();return
    tag='v0.5.9-beta.1' if mode=='available' else 'v0.5.7-beta.1'
-   data=[] if mode=='empty' else [{'tag_name':tag,'draft':False,'prerelease':True,'published_at':'2026-01-01T00:00:00Z','assets':[{'name':'TITAN-CORE.elf','size':16700000,'state':'uploaded','browser_download_url':f'https://github.com/devchmod/TITAN-CORE/releases/download/{tag}/TITAN-CORE.elf'}]}]
+   data=[] if mode=='empty' else [{'tag_name':tag,'draft':False,'prerelease':True,'published_at':'2026-01-01T00:00:00Z','assets':[{'name':'TITAN-CORE.elf','size':16700000,'state':'uploaded','browser_download_url':f'https://github.com/TOSanthony/TITAN-CORE/releases/download/{tag}/TITAN-CORE.elf'}]}]
    self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(data).encode());return
   if route=='/fixture/requests':
    self.send_response(200);self.send_header('Content-Type','application/json');self.end_headers();self.wfile.write(json.dumps(requests).encode());return

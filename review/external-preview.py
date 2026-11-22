@@ -11,7 +11,7 @@ class Handler(base.Handler):
  def do_GET(self):
   route=urlparse(self.path).path
   if route=='/':
-   body=(base.ROOT/'src/ui.html').read_text().replace('__VERSION__','1.0.0 SYNTHETIC').replace(' manifest="titan.appcache"','').replace('https://api.github.com/repos/devchmod/TITAN-CORE/releases?per_page=100','/fixture/releases')
+   body=(base.ROOT/'src/ui.html').read_text().replace('__VERSION__','1.0.0 SYNTHETIC').replace(' manifest="titan.appcache"','').replace('https://api.github.com/repos/TOSanthony/TITAN-CORE/releases?per_page=100','/fixture/releases')
    self.send_response(200);self.send_header('Content-Type','text/html');self.end_headers();self.wfile.write(body.encode());return
   if route=='/api/installer/destinations':
    data=[{'path':'/data','name':'Internal','free':30000000000,'external':False,'folder':'/user/app/<TITLE_ID>/app.pkg'},{'path':'/mnt/usb0','name':'USB 1','free':300000000000,'external':True,'folder':'/mnt/usb0/TITAN-CORE/Games'},{'path':'/mnt/usb1','name':'USB 2','free':500000000000,'external':True,'folder':'/mnt/usb1/TITAN-CORE/Games'}]

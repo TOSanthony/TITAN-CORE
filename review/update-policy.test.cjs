@@ -1,5 +1,5 @@
 const {test}=require('node:test');const assert=require('node:assert/strict');const u=require('./update-policy.js');
-function release(tag,overrides={}){return{tag_name:tag,draft:false,prerelease:tag.includes('-'),published_at:'2026-01-01T00:00:00Z',body:'Notes',assets:[{name:'TITAN-CORE.elf',size:100,state:'uploaded',browser_download_url:`https://github.com/devchmod/TITAN-CORE/releases/download/${tag}/TITAN-CORE.elf`}],...overrides};}
+function release(tag,overrides={}){return{tag_name:tag,draft:false,prerelease:tag.includes('-'),published_at:'2026-01-01T00:00:00Z',body:'Notes',assets:[{name:'TITAN-CORE.elf',size:100,state:'uploaded',browser_download_url:`https://github.com/TOSanthony/TITAN-CORE/releases/download/${tag}/TITAN-CORE.elf`}],...overrides};}
 const response=(data,status=200)=>({ok:status===200,status,json:async()=>data});
 test('semantic versions compare numerical components and prerelease identifiers',()=>{
  assert.equal(u.compare('0.5.10','0.5.9'),1);assert.equal(u.compare('v0.5.8-beta.10','0.5.8-beta.2'),1);assert.equal(u.compare('0.5.8','0.5.8-beta.99'),1);
@@ -12,7 +12,7 @@ test('drafts, unpublished entries and pending assets are excluded',()=>{
 });
 test('a release without an ELF cannot announce an installable update',()=>{assert.equal(u.select([release('v9.0.0',{assets:[{name:'source.zip'}]})]),null);});
 test('download URLs are restricted to the official repository, tag and filename',()=>{
- for(const url of ['javascript:alert(1)','https://github.com.evil.test/devchmod/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf','https://github.com/other/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf','https://github.com/devchmod/TITAN-CORE/releases/download/v8.0.0/TITAN-CORE.elf','https://github.com/devchmod/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf?redirect=evil']){
+ for(const url of ['javascript:alert(1)','https://github.com.evil.test/TOSanthony/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf','https://github.com/other/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf','https://github.com/TOSanthony/TITAN-CORE/releases/download/v8.0.0/TITAN-CORE.elf','https://github.com/TOSanthony/TITAN-CORE/releases/download/v9.0.0/TITAN-CORE.elf?redirect=evil']){
   const r=release('v9.0.0');r.assets[0].browser_download_url=url;assert.equal(u.select([r]),null);
  }
 });

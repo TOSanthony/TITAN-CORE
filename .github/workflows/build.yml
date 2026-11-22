@@ -47,6 +47,8 @@ jobs:
   payload:
     name: build payload
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -56,6 +58,15 @@ jobs:
             target/ps5/cargo/git
           key: payload-cargo-${{ hashFiles('Cargo.lock', 'ps5/Dockerfile') }}
           restore-keys: payload-cargo-
+      - name: Stamp build version (major.minor from Cargo.toml, patch = run number)
+        id: version
+        run: |
+          base=$(grep -m1 '^version = ' Cargo.toml | cut -d'"' -f2)
+          version="${base%.*}.${GITHUB_RUN_NUMBER}"
+          sed -i "0,/^version = \"$base\"/s//version = \"$version\"/" Cargo.toml
+          sed -i "/^name = \"titan-core\"$/{n;s/^version = \".*\"/version = \"$version\"/}" Cargo.lock
+          grep -m1 '^version = ' Cargo.toml
+          echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: ps5/build.sh (Docker)
         run: TITAN_UNIFIED_STACK=1 bash ps5/build.sh
       - name: sha256
@@ -108,7 +119,7 @@ jobs:
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: build-${{ github.run_number }}
+          TAG: v${{ needs.payload.outputs.version }}
           SHA: ${{ github.sha }}
         run: |
           sha256sum -c SHA256SUMS
@@ -116,7 +127,7 @@ jobs:
           gh release create "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
             --target "$SHA" \
-            --title "TITAN CORE build ${GITHUB_RUN_NUMBER} (${SHA::7})" \
+            --title "TITAN CORE ${TAG} (${SHA::7})" \
             --generate-notes \
             --latest \
             TITAN-CORE.elf SHA256SUMS

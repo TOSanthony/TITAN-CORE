@@ -1,7 +1,7 @@
 // BEGIN UPDATE POLICY
 (function (root) {
   'use strict';
-  var API = 'https://api.github.com/repos/devchmod/TITAN-CORE/releases?per_page=100';
+  var API = 'https://api.github.com/repos/TOSanthony/TITAN-CORE/releases?per_page=100';
   function version(text) {
     if (typeof text !== 'string' || text.length > 128) return null;
     var m = /^v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$/.exec(text);
@@ -27,7 +27,7 @@
     try {
       var u=new URL(url), parts=u.pathname.split('/').map(decodeURIComponent);
       return u.protocol==='https:' && u.hostname==='github.com' && !u.port && !u.username && !u.password && !u.search && !u.hash &&
-        parts.length===7 && parts[1]==='devchmod' && parts[2]==='TITAN-CORE' && parts[3]==='releases' && parts[4]==='download' && parts[5]===tag && parts[6]===name;
+        parts.length===7 && parts[1]==='TOSanthony' && parts[2]==='TITAN-CORE' && parts[3]==='releases' && parts[4]==='download' && parts[5]===tag && parts[6]===name;
     } catch (e) { return false; }
   }
   function select(releases) {
@@ -39,7 +39,7 @@
       var a=r.assets.find(function (x) { return x && typeof x.name==='string' && /^TITAN-CORE(?:-[0-9A-Za-z.+-]+)?\.elf$/i.test(x.name) && x.state==='uploaded' && Number.isFinite(x.size) && x.size>0 && assetURL(x.browser_download_url,r.tag_name,x.name); });
       if (!a || (best && compare(v,best.version)<=0)) return;
       best={version:v,tag:r.tag_name,url:a.browser_download_url,name:a.name,size:a.size,
-        page:'https://github.com/devchmod/TITAN-CORE/releases/tag/'+encodeURIComponent(r.tag_name),
+        page:'https://github.com/TOSanthony/TITAN-CORE/releases/tag/'+encodeURIComponent(r.tag_name),
         notes:typeof r.body==='string'?r.body.slice(0,4000):'',prerelease:r.prerelease===true||v.pre.length>0};
     });
     return best;
