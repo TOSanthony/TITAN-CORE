@@ -10,16 +10,16 @@ Internal installed PKGs stay in their system path. External installation keeps y
 
 ## ⬇️ Download TITAN CORE
 
-### [⬇️ Download ELF directly](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/TITAN-CORE-v1.0.elf)
+### [⬇️ Download ELF directly](https://github.com/TOSanthony/TITAN-CORE/releases/latest/download/TITAN-CORE.elf)
 
-**Version: 1.0** · **File: `TITAN-CORE-v1.0.elf`**
+**Version: 1.0** · **File: `TITAN-CORE.elf`** (rebuilt and published automatically on every change)
 
 1. Click **Download ELF directly** above to download the runnable payload.
-2. If you open the [release page](https://github.com/devchmod/TITAN-CORE/releases/tag/v1.0.0), expand **Assets** and select **`TITAN-CORE-v1.0.elf`**.
+2. If you open the [release page](https://github.com/TOSanthony/TITAN-CORE/releases/latest), expand **Assets** and select **`TITAN-CORE.elf`**.
 3. You need the **`.elf`** file to run TITAN CORE. **Source code (zip / tar.gz)** downloads are for developers. The ELF does not need extraction.
 4. Send the ELF to your PS5 using your existing payload/elfldr loader, then open `http://<PS5-IP>:8097`, replacing `<PS5-IP>` with your console's address.
 
-[All releases](https://github.com/devchmod/TITAN-CORE/releases) · [SHA256SUMS](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/SHA256SUMS)
+[All releases](https://github.com/TOSanthony/TITAN-CORE/releases) · [SHA256SUMS](https://github.com/TOSanthony/TITAN-CORE/releases/latest/download/SHA256SUMS)
 
 ## ⚙️ Before loading TITAN CORE
 
@@ -32,7 +32,7 @@ Internal installed PKGs stay in their system path. External installation keeps y
 
 Developed and maintained by **[devchmod](https://github.com/devchmod)** following six months of independent research, TITAN CORE brings game browsing, USB installation and diagnostics into one PS5 workspace. It integrates the native mounting workflow from Kraken Mount, kstuff-lite 1.11 and ShadowMountPlus 1.7beta10, with TITAN CORE interface, installer and integration work. It targets jailbroken PS5 consoles with elfldr. The development console uses firmware 13.60; wider hardware compatibility has not been established. This project does not include a console exploit.
 
-[Releases](https://github.com/devchmod/TITAN-CORE/releases) · [Source](https://github.com/devchmod/TITAN-CORE) · [Credits](CREDITS.md)
+[Releases](https://github.com/TOSanthony/TITAN-CORE/releases) · [Source](https://github.com/TOSanthony/TITAN-CORE) · [Credits](CREDITS.md)
 
 ## Updates and installed-game management
 
@@ -79,7 +79,7 @@ English, French, Arabic, Simplified Chinese and German have full current catalog
 
 ## Technology
 
-[![Rust](https://img.shields.io/badge/Rust-native_backend-DEA584?logo=rust)](https://github.com/devchmod/TITAN-CORE/search?l=rust) [![HTML](https://img.shields.io/badge/HTML-bundled_interface-E34F26?logo=html5&logoColor=white)](https://github.com/devchmod/TITAN-CORE/search?l=html) [![C](https://img.shields.io/badge/C-PS5_shims-555555?logo=c)](https://github.com/devchmod/TITAN-CORE/tree/main/ps5/shim) [![Shell](https://img.shields.io/badge/Shell-build_scripts-89E051?logo=gnubash&logoColor=white)](https://github.com/devchmod/TITAN-CORE/tree/main/ps5) [![Assembly](https://img.shields.io/badge/Assembly-startup-6E4C13)](https://github.com/devchmod/TITAN-CORE/tree/main/ps5) [![Docker](https://img.shields.io/badge/Docker-build_environment-2496ED?logo=docker&logoColor=white)](https://github.com/devchmod/TITAN-CORE/blob/main/ps5/Dockerfile) [![Python](https://img.shields.io/badge/Python-tooling-3572A5?logo=python&logoColor=white)](https://github.com/devchmod/TITAN-CORE/tree/main/review)
+[![Rust](https://img.shields.io/badge/Rust-native_backend-DEA584?logo=rust)](https://github.com/TOSanthony/TITAN-CORE/search?l=rust) [![HTML](https://img.shields.io/badge/HTML-bundled_interface-E34F26?logo=html5&logoColor=white)](https://github.com/TOSanthony/TITAN-CORE/search?l=html) [![C](https://img.shields.io/badge/C-PS5_shims-555555?logo=c)](https://github.com/TOSanthony/TITAN-CORE/tree/main/ps5/shim) [![Shell](https://img.shields.io/badge/Shell-build_scripts-89E051?logo=gnubash&logoColor=white)](https://github.com/TOSanthony/TITAN-CORE/tree/main/ps5) [![Assembly](https://img.shields.io/badge/Assembly-startup-6E4C13)](https://github.com/TOSanthony/TITAN-CORE/tree/main/ps5) [![Docker](https://img.shields.io/badge/Docker-build_environment-2496ED?logo=docker&logoColor=white)](https://github.com/TOSanthony/TITAN-CORE/blob/main/ps5/Dockerfile) [![Python](https://img.shields.io/badge/Python-tooling-3572A5?logo=python&logoColor=white)](https://github.com/TOSanthony/TITAN-CORE/tree/main/review)
 
 | Layer | Implementation |
 |---|---|

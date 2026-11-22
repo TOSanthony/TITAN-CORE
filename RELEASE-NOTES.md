@@ -33,4 +33,4 @@ TITAN bundles the resident services. Disable separate kstuff/ShadowMount autoloa
 
 **ظهور الحجم الكامل للخارجية داخل Stockage ديال PS5 ما زال غير محقق.** النسخة تعرض الحجم الصحيح داخل TITAN؛ لا تعني v1.0 توافق كل الألعاب أو جميع الأجهزة.
 
-Full source snapshot, validation and checksums are attached. See [README](https://github.com/devchmod/TITAN-CORE#readme) and [credits/licenses](https://github.com/devchmod/TITAN-CORE/blob/main/CREDITS.md). Thanks to quer3q, EchoStretch, drakmor, SDK contributors and the homebrew community; included upstream licenses/source notices are preserved.
+Full source snapshot, validation and checksums are attached. See [README](https://github.com/TOSanthony/TITAN-CORE#readme) and [credits/licenses](https://github.com/TOSanthony/TITAN-CORE/blob/main/CREDITS.md). Thanks to quer3q, EchoStretch, drakmor, SDK contributors and the homebrew community; included upstream licenses/source notices are preserved.

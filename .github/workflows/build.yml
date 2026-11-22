@@ -1,8 +1,8 @@
-# Host check (cargo check + UI script syntax), the payload build, and draft releases on v* tags.
+# Host check (cargo check + UI script syntax), the payload build, a published release on every push to main, and draft releases on v* tags.
 name: build
 
 on:
-  # Every push (any branch or tag) runs the check and the build; only v* tags release.
+  # Every push (any branch or tag) runs the check and the build; pushes to main publish a release, v* tags create a draft.
   push:
     branches: ['**']
     tags: ['**']
@@ -92,4 +92,31 @@ jobs:
             --title "$TAG" \
             --draft \
             --generate-notes \
+            TITAN-CORE.elf SHA256SUMS
+
+  publish:
+    name: publish release
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [check, payload]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: payload
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: build-${{ github.run_number }}
+          SHA: ${{ github.sha }}
+        run: |
+          sha256sum -c SHA256SUMS
+          # Stable asset names keep .../releases/latest/download/TITAN-CORE.elf valid.
+          gh release create "$TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$SHA" \
+            --title "TITAN CORE build ${GITHUB_RUN_NUMBER} (${SHA::7})" \
+            --generate-notes \
+            --latest \
             TITAN-CORE.elf SHA256SUMS
