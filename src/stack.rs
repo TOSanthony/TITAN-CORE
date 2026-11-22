@@ -254,12 +254,25 @@ impl Stack {
                 // One atomic attempt per boot, including across TITAN restarts.
                 let mut marker = OpenOptions::new().write(true).create_new(true).open(&attempt).map_err(|e| format!("Startup attempt already owned or unavailable: {e}"))?;
                 marker.write_all(format!("ShadowMountPlus 1.7beta10, kstuff-lite embedded: {}, etaHEN embedded: {}\n",!KSTUFF.is_empty(),!ETAHEN.is_empty()).as_bytes()).map_err(|e| e.to_string())?;
-                self.phase("starting", "Starting ShadowMount before kstuff");
+                // kstuff-lite is not embedded and etaHEN is: etaHEN includes kstuff, so it must start before ShadowMount.
+                let eta_leads = KSTUFF.is_empty() && launch_eta && !kstuff;
+                if eta_leads {
+                    self.phase("starting", "Starting etaHEN (provides kstuff) before ShadowMount");
+                    launch_eta = false;
+                    if let Err(e) = dispatch(ETAHEN_PATH) { log!("unified: etaHEN dispatch uncertain: {e}; not retrying"); }
+                    let mut ready = false;
+                    for _ in 0..240 {
+                        if kstuff_ready() { ready = true; break; }
+                        std::thread::sleep(Duration::from_millis(250));
+                    }
+                    if !ready { return Err("kstuff was not ready 60 s after etaHEN started; ShadowMount was not dispatched".into()); }
+                }
+                self.phase("starting", if eta_leads { "kstuff ready; starting ShadowMount" } else { "Starting ShadowMount before kstuff" });
                 // ShadowMount creates its no-automount sentinel before waiting for kstuff.
                 if shadow_process {
                     self.phase("waiting", "Existing ShadowMount process observed; waiting without restart");
                 } else if let Err(e) = dispatch(SHADOW_PATH) { log!("unified: ShadowMount dispatch uncertain: {e}; not retrying"); }
-                if !kstuff {
+                if !kstuff && !eta_leads {
                     // Wait for the upstream sentinel rather than guessing readiness from a delay.
                     let mut sentinel = false;
                     for _ in 0..80 {
@@ -271,11 +284,6 @@ impl Stack {
                         if !KSTUFF.is_empty() {
                             self.phase("starting", "Starting pinned kstuff-lite 1.11");
                             if let Err(e) = dispatch(KSTUFF_PATH) { log!("unified: kstuff dispatch uncertain: {e}; not retrying"); }
-                        } else if launch_eta {
-                            // kstuff-lite is not embedded: etaHEN is the kstuff provider and starts right after ShadowMount.
-                            self.phase("starting", "Starting etaHEN (kstuff is not embedded)");
-                            launch_eta = false;
-                            if let Err(e) = dispatch(ETAHEN_PATH) { log!("unified: etaHEN dispatch uncertain: {e}; not retrying"); }
                         } else {
                             self.phase("waiting", "kstuff is not embedded; waiting for an external kstuff");
                         }
