@@ -22,8 +22,8 @@
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "26034dfbb88dd8be344fee1876c387bfcba0386edb079014e18ec25580368f6d",
-      "note": "etaHEN supplied by the project owner (4696440 bytes)"
+      "sha256": "d7130c1450e473482ffa59479fd128eb81581df5fb9cbcb8fb56a1421a4a345c",
+      "note": "TOSanthony/etaHEN-2.6B release build-32 (commit a3d7a28), 5130256 bytes; embeds only the Plugin Updater, other plugins are installed with it"
     }
   ],
   "source_archives": [
