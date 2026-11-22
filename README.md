@@ -8,43 +8,22 @@ Internal installed PKGs stay in their system path. External installation keeps y
 
 **Known limit:** full external package size in PS5 System storage is not established. The v1.0 version number does not imply universal firmware/game compatibility or a new full hardware acceptance pass. See [release validation](docs/V1_0_VALIDATION.md).
 
-يبقى التثبيت الداخلي في مساره الأصلي. التثبيت الخارجي يحتفظ بملف الأرشيف ويعرض حجم اللعبة والذاكرة المؤقتة بشكل منفصل. ملفات PKG الأصلية على USB لا تعمل mount تلقائياً. ظهور الحجم الكامل للخارجية داخل تخزين نظام PS5 ما زال غير محقق.
+## ⬇️ Download TITAN CORE
 
-## ⬇️ تحميل TITAN CORE / Download TITAN CORE
+### [⬇️ Download ELF directly](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/TITAN-CORE-v1.0.elf)
 
-### [⬇️ تحميل ملف ELF مباشرة — Download ELF directly](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/TITAN-CORE-v1.0.elf)
-
-**النسخة / Version: 1.0** · **الملف / File: `TITAN-CORE-v1.0.elf`**
-
-**بالعربية**
-
-1. اضغط على رابط **تحميل ملف ELF مباشرة** أعلاه لتحميل ملف التشغيل.
-2. إذا فتحت [صفحة الإصدار](https://github.com/devchmod/TITAN-CORE/releases/tag/v1.0.0)، افتح **Assets** واضغط على **`TITAN-CORE-v1.0.elf`**.
-3. الملف المطلوب للتشغيل هو **`.elf`**. ملفات **Source code (zip / tar.gz)** هي للمطورين وليست ملف التشغيل. لا تحتاج إلى فك ضغط ملف ELF.
-4. أرسل ملف ELF إلى PS5 باستعمال أداة تحميل الـpayload/elfldr التي تستخدمها، ثم افتح `http://<PS5-IP>:8097` مع تعويض `<PS5-IP>` بعنوان جهازك.
-
-**English**
+**Version: 1.0** · **File: `TITAN-CORE-v1.0.elf`**
 
 1. Click **Download ELF directly** above to download the runnable payload.
 2. If you open the [release page](https://github.com/devchmod/TITAN-CORE/releases/tag/v1.0.0), expand **Assets** and select **`TITAN-CORE-v1.0.elf`**.
 3. You need the **`.elf`** file to run TITAN CORE. **Source code (zip / tar.gz)** downloads are for developers. The ELF does not need extraction.
 4. Send the ELF to your PS5 using your existing payload/elfldr loader, then open `http://<PS5-IP>:8097`, replacing `<PS5-IP>` with your console's address.
 
-[جميع الإصدارات / All releases](https://github.com/devchmod/TITAN-CORE/releases) · [بصمات التحقق / SHA256SUMS](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/SHA256SUMS)
+[All releases](https://github.com/devchmod/TITAN-CORE/releases) · [SHA256SUMS](https://github.com/devchmod/TITAN-CORE/releases/download/v1.0.0/SHA256SUMS)
 
+## ⚙️ Before loading TITAN CORE
 
-## ⚙️ قبل التشغيل / Before loading TITAN CORE
-
-**TITAN CORE يتضمن kstuff-lite وShadowMountPlus ويبدأ تشغيلهما تلقائياً. / TITAN CORE bundles kstuff-lite and ShadowMountPlus and starts them automatically.**
-
-### بالعربية
-
-- إذا كنت كتستعمل **kstuff أو ShadowMount كـpayloads مستقلّة**، عطّل تشغيلهما التلقائي أو احذف إدخالاتهما من لائحة **autoload / Payload Manager** الخاصة بهاد الإعداد. شغّل **TITAN CORE فقط** عوض تشغيل الحزم الثلاث كل واحدة بوحدها.
-- المقصود هو إزالة **التشغيل المنفصل** لهذين المكوّنين؛ لا تحذف ملفات الجيلبريك أو elfldr أو ملفات الألعاب، ولا تحذف المكونات المضمّنة داخل TITAN CORE.
-- إذا كانا مشغّلين من قبل، أغلق الألعاب وأعد تشغيل الجهاز لبدء جلسة جديدة، ثم فعّل الجيلبريك وelfldr بالطريقة المعتادة وحمّل ELF ديال TITAN CORE مرة واحدة.
-- TITAN CORE لا يتضمن استغلال الجيلبريك نفسه؛ ما زلت تحتاج إلى الجيلبريك وأداة تحميل ELF. يمكن مراجعة حالة الخدمات في Dashboard وDiagnostics.
-
-### English
+**TITAN CORE bundles kstuff-lite and ShadowMountPlus and starts them automatically.**
 
 - If you previously loaded **standalone kstuff or ShadowMount payloads**, disable their automatic loading or remove their entries from your **autoload / Payload Manager** list for this setup. Load **TITAN CORE only**, instead of loading all three separately.
 - Remove the **separate launch entries**; you do not need to delete jailbreak, elfldr or game files. Keep TITAN CORE's bundled components intact.
@@ -145,16 +124,11 @@ The bundled runtime launch notice now reads **PLAY NO LIMIT**. Settings uses **G
 
 Installing to an external disk keeps the original PKG exactly where it was, even if the source and destination are the same disk. TITAN creates a separate verified copy in `TITAN-CORE/Games/<TITLE_ID>/`. This needs additional space for the complete package plus working reserve; insufficient space stops installation without moving or deleting the original. Existing internal `/user/app` games stay in place. See [validation](docs/PRESERVE_EXTERNAL_SOURCE_VALIDATION.md).
 
-يبقى ملف PKG الأصلي في مكانه بعد التثبيت، حتى على نفس القرص الخارجي. ينشئ TITAN نسخة للألعاب داخل `TITAN-CORE/Games/<TITLE_ID>/`؛ يجب توفير مساحة للنسخة الكاملة.
-
 ## External PKGs require installation — 0.6.4-beta.1
 
 Connecting an external drive no longer auto-registers or mounts its download PKGs. Browse those originals in Installer and choose a destination. Only receipt-proven TITAN external installations (`TITAN-CORE/Games/<TITLE_ID>/<TITLE_ID>.pkg`) or recognized system-installed PKGs enter native game preparation. A folder with that name alone does not prove installation. Originals stay archived and are excluded from playable-library duplicates, even with custom scan folders. Internal PKGs, external extracted-game folders and image handling keep their existing behavior. Existing archives are not deleted. See [validation](docs/EXTERNAL_INSTALL_ONLY_VALIDATION.md).
-
-ملفات PKG الأصلية في القرص الخارجي تظهر في المثبّت فقط، ولا يتم تجهيزها أو عمل mount لها بمجرد توصيل القرص. بعد التثبيت يعتمد TITAN نسخة اللعبة في مسار التثبيت، مع الاحتفاظ بملف الأرشيف الأصلي.
 
 ## External installed label and measured size — 0.6.5-beta.1
 
 Receipt-proven external installations now show **PKG · External installed** with the actual drive, package size and internal cache listed separately. Original external installer archives remain Installer-only. System-installed/internal package behavior is unchanged. This display update does not change PS5 System storage accounting; full external accounting remains unverified. See [validation and investigation](docs/EXTERNAL_STATUS_VALIDATION.md).
 
-تظهر النسخة الخارجية المعتمدة باسم «مثبّتة خارجياً»، مع القرص والحجم الحقيقي للحزمة وحجم الذاكرة المؤقتة الداخلية بشكل منفصل. حساب التخزين داخل نظام PS5 لم يتغيّر بهذه النسخة.
