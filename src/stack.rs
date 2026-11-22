@@ -15,9 +15,16 @@ pub fn native_title_permitted(tid:&str)->bool{ NATIVE_TITLES.get_or_init(Default
 pub fn native_permitted()->bool{NATIVE_ALLOWED.load(Ordering::Acquire)}
 use std::time::Duration;
 
+// Optional payloads are empty unless embedded by ps5/build.sh from vendor/unified/PAYLOADS.conf.
+#[cfg(feature = "payload-kstuff")]
 const KSTUFF: &[u8] = include_bytes!("../vendor/unified/kstuff-lite-v1.11.elf");
+#[cfg(not(feature = "payload-kstuff"))]
+const KSTUFF: &[u8] = &[];
 const SHADOW: &[u8] = include_bytes!("../vendor/unified/shadowmountplus-1.7beta10.elf");
+#[cfg(feature = "payload-etahen")]
 const ETAHEN: &[u8] = include_bytes!("../vendor/unified/etaHEN.elf");
+#[cfg(not(feature = "payload-etahen"))]
+const ETAHEN: &[u8] = &[];
 const KSTUFF_PATH: &str = "/data/titan-core/payloads/kstuff-lite-v1.11.elf";
 const SHADOW_PATH: &str = "/data/titan-core/payloads/shadowmountplus-1.7beta10.elf";
 const ETAHEN_PATH: &str = "/data/titan-core/payloads/etaHEN.elf";
@@ -239,12 +246,14 @@ impl Stack {
             stack_policy::BootDecision::Inconsistent => return Err("ShadowMount responds but kstuff readiness is unconfirmed; no reload attempted".into()),
             stack_policy::BootDecision::ObservePrevious => self.phase("waiting", "A startup was already attempted this boot; observing without duplicate launches"),
             stack_policy::BootDecision::Start => {
-                let (kstuff_process,shadow_process,eta_process) = dependency_processes()?; launch_eta = !eta_process;
+                let (kstuff_process,shadow_process,eta_process) = dependency_processes()?; launch_eta = !ETAHEN.is_empty() && !eta_process;
                 fs::create_dir_all("/data/titan-core/payloads").map_err(|e| e.to_string())?;
-                install(KSTUFF_PATH, KSTUFF)?; install(SHADOW_PATH, SHADOW)?; install(ETAHEN_PATH, ETAHEN)?;
+                install(SHADOW_PATH, SHADOW)?;
+                if !KSTUFF.is_empty() { install(KSTUFF_PATH, KSTUFF)?; }
+                if !ETAHEN.is_empty() { install(ETAHEN_PATH, ETAHEN)?; }
                 // One atomic attempt per boot, including across TITAN restarts.
                 let mut marker = OpenOptions::new().write(true).create_new(true).open(&attempt).map_err(|e| format!("Startup attempt already owned or unavailable: {e}"))?;
-                marker.write_all(b"ShadowMountPlus 1.7beta10 + kstuff-lite 1.11 + etaHEN\n").map_err(|e| e.to_string())?;
+                marker.write_all(format!("ShadowMountPlus 1.7beta10, kstuff-lite embedded: {}, etaHEN embedded: {}\n",!KSTUFF.is_empty(),!ETAHEN.is_empty()).as_bytes()).map_err(|e| e.to_string())?;
                 self.phase("starting", "Starting ShadowMount before kstuff");
                 // ShadowMount creates its no-automount sentinel before waiting for kstuff.
                 if shadow_process {
@@ -259,8 +268,17 @@ impl Stack {
                     }
                     if !sentinel { return Err("ShadowMount startup sentinel not observed; kstuff was not dispatched".into()); }
                     if !kstuff_ready() && !kstuff_process {
-                        self.phase("starting", "Starting pinned kstuff-lite 1.11");
-                        if let Err(e) = dispatch(KSTUFF_PATH) { log!("unified: kstuff dispatch uncertain: {e}; not retrying"); }
+                        if !KSTUFF.is_empty() {
+                            self.phase("starting", "Starting pinned kstuff-lite 1.11");
+                            if let Err(e) = dispatch(KSTUFF_PATH) { log!("unified: kstuff dispatch uncertain: {e}; not retrying"); }
+                        } else if launch_eta {
+                            // kstuff-lite is not embedded: etaHEN is the kstuff provider and starts right after ShadowMount.
+                            self.phase("starting", "Starting etaHEN (kstuff is not embedded)");
+                            launch_eta = false;
+                            if let Err(e) = dispatch(ETAHEN_PATH) { log!("unified: etaHEN dispatch uncertain: {e}; not retrying"); }
+                        } else {
+                            self.phase("waiting", "kstuff is not embedded; waiting for an external kstuff");
+                        }
                     }
                 }
             }

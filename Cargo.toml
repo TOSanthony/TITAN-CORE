@@ -11,6 +11,9 @@ members = [".", "crates/titan-core-pkg"]
 # Stage 2 of ps5/build.sh: embeds stage 1 (env TITAN_SELF_ELF) to save it as the tile's copy.
 self-copy = []
 unified-stack = []
+# Chosen from vendor/unified/PAYLOADS.conf by ps5/build.sh: which optional payloads are embedded.
+payload-kstuff = []
+payload-etahen = []
 
 [dependencies]
 titan-core-pkg = { path = "crates/titan-core-pkg" }
