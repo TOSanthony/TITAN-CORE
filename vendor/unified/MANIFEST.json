@@ -22,8 +22,8 @@
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "512c74a9d6f56bb5a4ab871a0306a8cbefb8b3d5454ba8f1d833b020b245a126",
-      "note": "etaHEN 2.6B supplied by the project owner (4740712 bytes)"
+      "sha256": "26034dfbb88dd8be344fee1876c387bfcba0386edb079014e18ec25580368f6d",
+      "note": "etaHEN supplied by the project owner (4696440 bytes)"
     }
   ],
   "source_archives": [
