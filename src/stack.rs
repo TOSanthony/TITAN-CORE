@@ -60,7 +60,7 @@ fn kstuff_ready() -> bool {
 fn kstuff_ready() -> bool { panic!("Hardware readiness is never run by host tests") }
 
 #[cfg(target_os = "freebsd")]
-fn dependency_processes() -> Result<(bool,bool),String> {
+fn dependency_processes() -> Result<(bool,bool,bool),String> {
     let mib = [libc::CTL_KERN,libc::KERN_PROC,libc::KERN_PROC_PROC,0]; let mut length = 0usize;
     if unsafe { libc::sysctl(mib.as_ptr(),4,std::ptr::null_mut(),&mut length,std::ptr::null_mut(),0) } != 0 || length == 0 || length > 8 << 20 {
         return Err("Process visibility unavailable; dependencies were not launched".into());
@@ -72,7 +72,7 @@ fn dependency_processes() -> Result<(bool,bool),String> {
     bytes.truncate(length); crate::stack_policy::dependency_presence(&bytes)
 }
 #[cfg(not(target_os = "freebsd"))]
-fn dependency_processes() -> Result<(bool,bool),String> { Err("PS5 process query is not run by host tests".into()) }
+fn dependency_processes() -> Result<(bool,bool,bool),String> { Err("PS5 process query is not run by host tests".into()) }
 
 pub struct HttpReply { pub code: u16, pub ctype: String, pub body: Vec<u8> }
 fn http(port: u16, method: &str, path: &str, body: &[u8], seconds: u64) -> Result<HttpReply, String> {
@@ -233,17 +233,18 @@ impl Stack {
         { let mut s = self.snapshot.lock().unwrap_or_else(|e| e.into_inner()); s.firmware = Some(firmware); s.port = port; s.kstuff = kstuff; s.shadow = shadow; }
         let attempt = stack_policy::attempt_name(boot_identity());
         let previous = Path::new(&attempt).exists();
+        let mut launch_eta = false;
         match stack_policy::boot_decision(kstuff, shadow, previous) {
             stack_policy::BootDecision::Reuse => { self.phase("ready", "Existing services reused without reloading"); return Ok(()); }
             stack_policy::BootDecision::Inconsistent => return Err("ShadowMount responds but kstuff readiness is unconfirmed; no reload attempted".into()),
             stack_policy::BootDecision::ObservePrevious => self.phase("waiting", "A startup was already attempted this boot; observing without duplicate launches"),
             stack_policy::BootDecision::Start => {
-                let (kstuff_process,shadow_process) = dependency_processes()?;
+                let (kstuff_process,shadow_process,eta_process) = dependency_processes()?; launch_eta = !eta_process;
                 fs::create_dir_all("/data/titan-core/payloads").map_err(|e| e.to_string())?;
                 install(KSTUFF_PATH, KSTUFF)?; install(SHADOW_PATH, SHADOW)?; install(ETAHEN_PATH, ETAHEN)?;
                 // One atomic attempt per boot, including across TITAN restarts.
                 let mut marker = OpenOptions::new().write(true).create_new(true).open(&attempt).map_err(|e| format!("Startup attempt already owned or unavailable: {e}"))?;
-                marker.write_all(b"ShadowMountPlus 1.7beta10 + kstuff-lite 1.11\n").map_err(|e| e.to_string())?;
+                marker.write_all(b"ShadowMountPlus 1.7beta10 + kstuff-lite 1.11 + etaHEN\n").map_err(|e| e.to_string())?;
                 self.phase("starting", "Starting ShadowMount before kstuff");
                 // ShadowMount creates its no-automount sentinel before waiting for kstuff.
                 if shadow_process {
@@ -268,7 +269,14 @@ impl Stack {
         while std::time::Instant::now() < deadline {
             let kstuff = kstuff_ready(); let shadow = kstuff && shadow_ready(port);
             { let mut s = self.snapshot.lock().unwrap_or_else(|e| e.into_inner()); s.kstuff = kstuff; s.shadow = shadow; }
-            if kstuff && shadow { self.phase("ready", "Services verified ready"); return Ok(()); }
+            if kstuff && shadow {
+                // etaHEN is bootstrapped once per boot, only after kstuff and ShadowMount are verified. Failure never affects readiness.
+                if launch_eta {
+                    self.phase("starting", "Starting etaHEN");
+                    if let Err(e) = dispatch(ETAHEN_PATH) { log!("unified: etaHEN dispatch uncertain: {e}; not retrying"); }
+                }
+                self.phase("ready", "Services verified ready"); return Ok(());
+            }
             std::thread::sleep(Duration::from_millis(500));
         }
         Err("Services did not become ready. Inspect Diagnostics; no repeated kernel-payload launch was attempted".into())

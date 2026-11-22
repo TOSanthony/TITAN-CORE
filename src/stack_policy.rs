@@ -36,9 +36,9 @@ pub fn boot_decision(kstuff: bool, shadow: bool, previous_attempt: bool) -> Boot
 
 /// Read the same kinfo record name field used by pinned ShadowMountPlus main.c.
 /// Malformed/empty snapshots are unknown, never proof that a process is absent.
-pub fn dependency_presence(bytes: &[u8]) -> Result<(bool,bool),String> {
+pub fn dependency_presence(bytes: &[u8]) -> Result<(bool,bool,bool),String> {
     if bytes.is_empty() { return Err("Empty process snapshot".into()); }
-    let mut offset = 0; let mut kstuff = false; let mut shadow = false;
+    let mut offset = 0; let mut kstuff = false; let mut shadow = false; let mut eta = false;
     while offset < bytes.len() {
         let rest = &bytes[offset..];
         if rest.len() < 4 { return Err("Truncated process snapshot".into()); }
@@ -49,9 +49,10 @@ pub fn dependency_presence(bytes: &[u8]) -> Result<(bool,bool),String> {
         let name = &name[..end];
         kstuff |= name.starts_with(b"kstuff") || name.starts_with(b"ps5-kstuff");
         shadow |= name.starts_with(b"shadowmountplus");
+        eta |= name.starts_with(b"etaHEN");
         offset += size as usize;
     }
-    Ok((kstuff,shadow))
+    Ok((kstuff,shadow,eta))
 }
 
 pub fn attempt_name(boot: Option<(u64,u64)>) -> String {
@@ -70,16 +71,18 @@ mod tests {
     use super::*;
     #[test] fn observes_existing_or_starting_dependency_processes() {
         let mut record=vec![0u8;600];record[..4].copy_from_slice(&600i32.to_ne_bytes());record[447..457].copy_from_slice(b"kstuff.elf");
-        assert_eq!(dependency_presence(&record),Ok((true,false)));
+        assert_eq!(dependency_presence(&record),Ok((true,false,false)));
         let mut shadow=vec![0u8;600];shadow[..4].copy_from_slice(&600i32.to_ne_bytes());shadow[447..466].copy_from_slice(b"shadowmountplus.elf");
-        record.extend(shadow);assert_eq!(dependency_presence(&record),Ok((true,true)));
+        record.extend(shadow);assert_eq!(dependency_presence(&record),Ok((true,true,false)));
+        let mut eta=vec![0u8;600];eta[..4].copy_from_slice(&600i32.to_ne_bytes());eta[447..453].copy_from_slice(b"etaHEN");
+        record.extend(eta);assert_eq!(dependency_presence(&record),Ok((true,true,true)));
     }
     #[test] fn invalid_process_data_never_means_absent() {
         assert!(dependency_presence(&[]).is_err());assert!(dependency_presence(&[0;10]).is_err());
         let mut record=vec![0u8;500];record[..4].copy_from_slice(&700i32.to_ne_bytes());assert!(dependency_presence(&record).is_err());
     }
     #[test] fn unrelated_processes_do_not_match() {
-        let mut record=vec![0u8;600];record[..4].copy_from_slice(&600i32.to_ne_bytes());record[447..452].copy_from_slice(b"titan");assert_eq!(dependency_presence(&record),Ok((false,false)));
+        let mut record=vec![0u8;600];record[..4].copy_from_slice(&600i32.to_ne_bytes());record[447..452].copy_from_slice(b"titan");assert_eq!(dependency_presence(&record),Ok((false,false,false)));
     }
     #[test] fn boot_markers_separate_boots_and_reject_invalid_time() {
         assert_ne!(attempt_name(Some((100,0))),attempt_name(Some((101,0))));
