@@ -19,6 +19,13 @@
       "sha256": "8c6798232ae2a8fbcd209ab97fc4f8d4d47cf23b7eecfaa6349c0bfeb8e4a3d3",
       "license": "GPL-3.0 (upstream LICENSE), upstream third-party notices retained"
     }
+    ,
+    {
+      "name": "etaHEN",
+      "file": "etaHEN.elf",
+      "sha256": "26034dfbb88dd8be344fee1876c387bfcba0386edb079014e18ec25580368f6d",
+      "note": "added by the project owner; tag, repository and commit still to be recorded"
+    }
   ],
   "source_archives": [
     {

@@ -17,8 +17,10 @@ use std::time::Duration;
 
 const KSTUFF: &[u8] = include_bytes!("../vendor/unified/kstuff-lite-v1.11.elf");
 const SHADOW: &[u8] = include_bytes!("../vendor/unified/shadowmountplus-1.7beta10.elf");
+const ETAHEN: &[u8] = include_bytes!("../vendor/unified/etaHEN.elf");
 const KSTUFF_PATH: &str = "/data/titan-core/payloads/kstuff-lite-v1.11.elf";
 const SHADOW_PATH: &str = "/data/titan-core/payloads/shadowmountplus-1.7beta10.elf";
+const ETAHEN_PATH: &str = "/data/titan-core/payloads/etaHEN.elf";
 // system_tmp is boot-scoped. Never remove another launch's attempt marker.
 #[cfg(target_os = "freebsd")]
 fn boot_identity() -> Option<(u64,u64)> {
@@ -238,7 +240,7 @@ impl Stack {
             stack_policy::BootDecision::Start => {
                 let (kstuff_process,shadow_process) = dependency_processes()?;
                 fs::create_dir_all("/data/titan-core/payloads").map_err(|e| e.to_string())?;
-                install(KSTUFF_PATH, KSTUFF)?; install(SHADOW_PATH, SHADOW)?;
+                install(KSTUFF_PATH, KSTUFF)?; install(SHADOW_PATH, SHADOW)?; install(ETAHEN_PATH, ETAHEN)?;
                 // One atomic attempt per boot, including across TITAN restarts.
                 let mut marker = OpenOptions::new().write(true).create_new(true).open(&attempt).map_err(|e| format!("Startup attempt already owned or unavailable: {e}"))?;
                 marker.write_all(b"ShadowMountPlus 1.7beta10 + kstuff-lite 1.11\n").map_err(|e| e.to_string())?;
