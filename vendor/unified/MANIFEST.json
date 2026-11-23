@@ -22,8 +22,8 @@
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "e4ac1b1bac8a2ac13d5c490d325a170450ef0be252c82e44a3e3cf7df564048a",
-      "note": "TOSanthony/etaHEN-2.6B release build-34 (commit 089d461), 5122432 bytes, new round logo; embeds only the Plugin Updater, other plugins are installed with it"
+      "sha256": "0ae38bb71b50f0b9dd722c7fe4d892a4fea792fbd0ef800f71997ba254110ced",
+      "note": "TOSanthony/etaHEN-2.6B release build-38 (commit ae372a6), 5127168 bytes, round logo, Updater progress panel, Media Gallery web UI; embeds only the Plugin Updater, other plugins are installed with it"
     }
   ],
   "source_archives": [
