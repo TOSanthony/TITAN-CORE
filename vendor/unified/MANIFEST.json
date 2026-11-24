@@ -22,8 +22,8 @@
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "0ae38bb71b50f0b9dd722c7fe4d892a4fea792fbd0ef800f71997ba254110ced",
-      "note": "TOSanthony/etaHEN-2.6B release build-45 (commit 808b8cc), 5127168 bytes, Updater progress panel, Dashboard apply restarts the shell, Media Gallery web UI; embeds only the Plugin Updater"
+      "sha256": "2e90211057b56c7cabc9ee282bfcf3394bf80d7afb3522df2f7b2bf1b6d04071",
+      "note": "TOSanthony/etaHEN-2.6B release build-50 (commit 35a55a6), 5132448 bytes, Plugin Manager (EN/FR, plugin icons), PS4 Pro Mode plugin; embeds only the Plugin Manager"
     }
   ],
   "source_archives": [
