@@ -22,8 +22,8 @@
     {
       "name": "etaHEN",
       "file": "etaHEN.elf",
-      "sha256": "2e90211057b56c7cabc9ee282bfcf3394bf80d7afb3522df2f7b2bf1b6d04071",
-      "note": "TOSanthony/etaHEN-2.6B release build-53 (commit c93204e), 5132448 bytes, embeds kstuff-dr 1.15 test2a; Plugin Manager"
+      "sha256": "a2ef4a60f0db9dbe11b7394ea8cdd27b19dd1eef4c7e86ceee0a9f33ed150563",
+      "note": "TOSanthony/etaHEN-2.6B release build-54 (commit 0179f74), 5172160 bytes, embeds kstuff-dr 1.15 test2a; Plugin Manager"
     }
   ],
   "source_archives": [
